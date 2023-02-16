@@ -5,7 +5,7 @@ class TeoremaDePitagoras():
     def __init__(self,  catetoA=0, catetoO=0, hipotenusa=0):
         
         """Explicação dessa conversão
-        Essas converções e cndições são necessárias porque na rota são decalarados 3 tipos de query paramns, e quando um desses parametros não é passado, ele retorna um item None (e um item None não pode ser multiplicado, o que faz com que esse item caia no tratamento de erro). Então "float(catetoO) if catetoO is not None else 0" é a condição que faz com que, caso seja None, ele vire 0.
+        Essas converções e condições são necessárias porque na rota são decalarados 3 tipos de query paramns, e quando um desses parametros não é passado, ele retorna um item None (e um item None não pode ser multiplicado, o que faz com que esse item caia no tratamento de erro). Então "float(catetoO) if catetoO is not None else 0" é a condição que faz com que, caso seja None, ele vire 0.
         
         Acima, em self, precisa ser passado como (catetoA=0, catetoO=0, hipotenusa=0) para que não precise sempre declarar todos sempre que for usar a classe, por exemplo: teorema=TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO).
         """
