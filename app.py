@@ -1,11 +1,11 @@
 from flask import Flask, request, render_template
 from classes.formula_pitagoras import TeoremaDePitagoras
-from enviar_email import Email
-
+from classes.gmail import Email
+import os
 
 # classes instânciadas
 app = Flask(__name__, template_folder='templates')
-enviar = Email("mateus@trovale.com.br", "karateka30")
+enviar = Email(os.environ["EMAIL"], os.environ["SENHA"])
 
 
 @app.route("/teorema_de_pitagoras", methods=["GET"])
@@ -35,8 +35,6 @@ def query_teorema():
     except ValueError:
         return {"400":"bod_request", "number":"apenas_float_e_int_suportados"}
     
-    
-
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -105,10 +103,8 @@ def cateto_adjacente():
             return render_template('index.html')
     except:
         return render_template('cateto_adjacente.html')
-    
-    
-    
-
+        
+        
 @app.route("/cateto_oposto", methods=['GET', 'POST'])
 def cateto_oposto():
     
