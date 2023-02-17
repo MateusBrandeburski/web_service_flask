@@ -39,4 +39,12 @@ class TeoremaDePitagoras():
         hipotenusa = quadrado_da_hipotenusa ** (1/2)
         return hipotenusa
    
-    
+    def strings_teorema(self, name):
+             
+        if "hipotenusa" in name:
+            name = "hipotensa"
+            return name
+        else:
+            name = "cateto"
+            return name
+            
