@@ -1,8 +1,8 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, render_template
 from classes.formula_pitagoras import TeoremaDePitagoras
 
 
-calcularora_query = Blueprint('calculadora_query', __name__)
+calcularora_query = Blueprint('calculadora_query', __name__, template_folder='templates')
 
 
 @calcularora_query.route("/teorema_de_pitagoras", methods=["GET"])
@@ -22,8 +22,11 @@ def query_teorema():
             return { "Cateto": round(teorema.calcular_catetos(), 2) }
         
         elif catetoA and catetoO:      
-            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO)       
-            return { "Hipotenusa": round(teorema.calcular_hipotenusa(), 2)}
+            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO) 
+                
+            return render_template('resposta_query.html', hipotenusa=round(teorema.calcular_hipotenusa(), 2))  
+        
+            # return { "Hipotenusa": round(teorema.calcular_hipotenusa(), 2)}
       
     except TypeError:
       return {"204":"no_content", "query":"faltam_parametros"}

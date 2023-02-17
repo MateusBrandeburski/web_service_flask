@@ -27,10 +27,11 @@ def index():
     
     return render_template('index.html')
 
-@calculadora_grafica.route("/info", methods=['GET'])
-def info():
-    enviar.envia_email()
-    return render_template('infos.html')
+# @calculadora_grafica.route("/info", methods=['GET'])
+# def info():
+#     enviar.envia_email()
+#     return render_template('infos.html')
+
     
 @calculadora_grafica.route("/hipotenusa", methods=['GET', 'POST'])
 def hipotenusa():
