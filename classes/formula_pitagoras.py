@@ -41,13 +41,4 @@ class TeoremaDePitagoras():
    
     
 
-            
-
-# teorema = TeoremaDePitagoras(catetoA=4, hipotenusa=5)
-# teorema.calcular_catetos()
-
-# teorema = TeoremaDePitagoras(catetoO=3, hipotenusa=5)
-# teorema.calcular_catetos()
-
-# teorema = TeoremaDePitagoras(catetoA=3, catetoO=4)
-# teorema.calcular_hipotenusa()
+        
