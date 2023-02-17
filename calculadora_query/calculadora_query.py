@@ -22,12 +22,10 @@ def query_teorema():
             return { "Cateto": round(teorema.calcular_catetos(), 2) }
         
         elif catetoA and catetoO:      
-            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO) 
-                
-            return render_template('resposta_query.html', hipotenusa=round(teorema.calcular_hipotenusa(), 2))  
-        
-            # return { "Hipotenusa": round(teorema.calcular_hipotenusa(), 2)}
-      
+            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO)  
+              
+            return render_template('resposta_query.html', resposta=round(teorema.calcular_hipotenusa(), 2))  
+           
     except TypeError:
       return {"204":"no_content", "query":"faltam_parametros"}
   

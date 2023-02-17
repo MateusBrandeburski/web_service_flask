@@ -40,5 +40,3 @@ class TeoremaDePitagoras():
         return hipotenusa
    
     
-
-        
