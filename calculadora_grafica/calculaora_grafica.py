@@ -3,6 +3,8 @@ from classes.gmail import Email
 import os
 
 calculadora_grafica = Blueprint('calculadora_grafica', __name__, template_folder='templates')
+
+
 enviar = Email(os.environ["EMAIL"], os.environ["SENHA"])
 
 
