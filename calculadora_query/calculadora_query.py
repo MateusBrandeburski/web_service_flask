@@ -18,7 +18,7 @@ def query_teorema():
      
     try:
         if (catetoA and hipotenusa) or (catetoO and hipotenusa): 
-            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO,hipotenusa=hipotenusa)
+            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO, hipotenusa=hipotenusa)
             return render_template('resposta_query.html', name=teorema.strings_teorema(name="cateto"), resposta=round(teorema.calcular_catetos(), 2))
         
         elif catetoA and catetoO:      

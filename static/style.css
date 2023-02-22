@@ -1,0 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+* { /* pega todos os elementos */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh; /* utiliza o tamanho todo da tela (vh = view port higth, 100% da tela. */
+    box-sizing: border-box; /* faz com que o elemento filho não saia do elemento pai */
+    background-color: #000000; /*Cor de fundo da página*/
+    color: white; /* cor do texto */
+}
+
+.destaque-titulo { /*usamos a tag strong para fazer uma parte do texto ter uma cor diferente */
+    color: #A785F5;
+}
+
+.apresentacao {
+    margin: 10% ;
+    display:flex; /* coloca os elementos horizontalmente */
+    align-items: center; /* coloca elementos mais para o meio da página */
+    justify-content: space-between; /* joga cada elemento filho para um lado */
+}
+
+.apresentacao__conteudo {
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+} 
+
+
+.apresentacao__conteudo__titulo {
+    font-size: 36px;
+    font-family: 'Krona One', sans-serif;
+}
+
+.aprensentacao__conteudo__paragrafo {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.apresentacao__links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.apresentacao__links__link {
+    background-color: #A785F5;
+    width: 280px;
+    text-align: center; /* alinhamento do texto */
+    border-radius: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+
+}

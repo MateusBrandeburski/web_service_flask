@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Calculadora de Pitágoras</title>
 </head>
 <body>
     <form>
         <header></header>
+        <!-- elemento pai -->
         <main class="apresentacao">
-                <h1 class="apresentacao__conteudo__titulo">Se soubermos o tamanho de dois lados de um triângulo retângulo, <strong>podemos descobrir o outro lado!
+            <!-- elemento filho primeiro grau -->
+            <section class="apresentacao__conteudo">
+                <!-- elemento filho segund grau -->
+                <h1 class="apresentacao__conteudo__titulo">Se soubermos o tamanho de dois lados de um triângulo retângulo, <strong class="destaque-titulo">podemos descobrir o outro lado!
                 </strong></h1>
-                <p>O Flask pode ser um boa opção até mesmo para aplicações de médio porte. Usando POO (paradigma de programação orientada a objeto) e a bliblioteca Blueprint para modularizar os endpoints do código, podemos ter uma aplicação de peso de forma organizada. </p>
-
+                <p class="aprensentacao__conteudo__paragrafo">O Flask pode ser um boa opção até mesmo para aplicações de médio porte. Usando POO (paradigma de programação orientada a objeto) e a Blueprint para modularizar os endpoints do código, podemos ter uma aplicação de peso de forma organizada. </p>
+                <div class="apresentacao__links">
                 <!-- Tags Âncoras -->
-                <a href="https://www.linkedin.com/in/mateus-brandeburski-001ba7202/">LinkdIn</a>
-                <a href="https://github.com/MateusBrandeburski">GitHub</a>
-                <img src="/static/image/Marrom e Creme Vintage Com Borda Medieval Convite.png" alt="Triângulo Retângulo">
-        </main>
+                    <a class="apresentacao__links__link" href="https://www.linkedin.com/in/mateus-brandeburski-001ba7202/">Âncora 1</a>
+                    <a class="apresentacao__links__link" href="https://github.com/MateusBrandeburski">Âncora 2</a>
+                </div>
+            </section>
 
-       <footer></footer>
+            <img src="/static/image/html.png" alt="Triângulo Retângulo">
+        </main>
+        <footer></footer>
     </form>
 </body>
 </html>
