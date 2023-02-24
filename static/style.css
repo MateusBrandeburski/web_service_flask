@@ -7,7 +7,7 @@
 }
 
 body {
-    height: 100vh; /* utiliza o tamanho todo da tela (vh = view port higth, 100% da tela. */
+   /* height: 100vh;  utiliza o tamanho todo da tela (vh = view port higth, 100% da tela. */
     box-sizing: border-box; /* faz com que o elemento filho não saia do elemento pai */
     background-color: #000000; /*Cor de fundo da página*/
     color: white; /* cor do texto */
@@ -58,5 +58,37 @@ body {
     text-decoration: none;
     color: black;
     font-family: 'Montserrat', sans-serif;
+}
+
+.rodape {
+    color: black;
+    background-color: #A785F5;
+    padding: 24px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.foto_sobre_mim {
+    width: 500px;
+    height: 500px;
+}
+
+.cabecalho {
+    padding: 2% 0 0 16%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
 
 }
+
+.cabecalho__menu__link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #A785F5;
+
+}
+
