@@ -7,19 +7,24 @@ calculadora_grafica = Blueprint('calculadora_grafica', __name__, template_folder
 enviar = Email(os.environ["EMAIL"], os.environ["SENHA"])
 
 
-@calculadora_grafica.route("/", methods=['GET'])
+# Rota index para protrocolo HTTPS GET
+@calculadora_grafica.route("/calculadora", methods=['GET'])
 def index():
      
-     try:
+     global resposta
+     if 'resposta' in globals() and resposta != "":
           return render_template('back_html.html', resposta=resposta)
      
-     except NameError: # if resposta is not defined
+     else:
           return render_template('back_html.html')
+     
 
-@calculadora_grafica.route("/", methods=['GET','POST'])
+
+
+
+@calculadora_grafica.route("/calculadora", methods=['POST'])
 def calculadora():
       
-
      if request.form['action'] == 'calcular':
           
           if request.form.get('hipotenusa') != "":
@@ -36,6 +41,9 @@ def calculadora():
   
                
           elif request.form.get('hipotenusa') == "":
+               
                teorema = TeoremaDePitagoras(catetoA=request.form.get('cA'), catetoO=request.form.get('cO'))
                resposta = teorema.calcular_hipotenusa()
                return redirect(url_for('calculadora_grafica.index'))
+          
+         # erros para tratar. Número negativo, 1 campo preenchido, 3 campos prenchido, 3 campos não preenchidos
