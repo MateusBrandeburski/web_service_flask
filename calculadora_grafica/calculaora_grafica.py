@@ -25,30 +25,13 @@ def calculadora():
       
      if request.form['action'] == 'calcular':
           
-          if  (request.form.get('hipotenusa') == "") and (request.form.get('cA') == "") and  (request.form.get('cO') == ""):
+          if  (request.form.get('hipotenusa') == "") and (request.form.get('cA') == "") and  (request.form.get('cO') == "") or (request.form.get('hipotenusa') == "") and (request.form.get('cA') == "") or  (request.form.get('hipotenusa') == "") and (request.form.get('cO') == "") or (request.form.get('cA') == "") and (request.form.get('cO') == "") or (request.form.get('cA') != "") and (request.form.get('cO') != "") and  (request.form.get('hipotenusa') != ""):
                
                    global resposta
                    resposta = TeoremaDePitagoras.strings_teorema(name="falta_parametros")
                    return redirect(url_for('calculadora_grafica.index'))
           
-          elif (request.form.get('hipotenusa') == "") and (request.form.get('cA') == ""):
-               
-             
-               resposta = TeoremaDePitagoras.strings_teorema(name="falta_parametros")
-               return redirect(url_for('calculadora_grafica.index'))
-              
-          elif (request.form.get('hipotenusa') == "") and (request.form.get('cO') == ""):
-                              
-   
-               resposta = TeoremaDePitagoras.strings_teorema(name="falta_parametros")
-               return redirect(url_for('calculadora_grafica.index'))
           
-          elif (request.form.get('cA') == "") and (request.form.get('cO') == ""):
-              
-               resposta = TeoremaDePitagoras.strings_teorema(name="falta_parametros")
-               return redirect(url_for('calculadora_grafica.index'))
-          
-           
           else:
                           
                if request.form.get('hipotenusa') != "":
