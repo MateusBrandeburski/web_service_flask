@@ -46,7 +46,10 @@ class TeoremaDePitagoras():
         elif "cateto" in name:
             return name 
         elif "falta_parametros" in name:
-            name = "Dois campus devem ser preenchidos para calcular: 'se tivermos 2 lados de um triângilo retângulo podemos calcular o outro lado.'"
+            name = "Dois campus devem ser preenchidos para calcular."
+            return name
+        elif "TypeError" in name:
+            name = "Número negativo não é possível."
             return name
         
 
