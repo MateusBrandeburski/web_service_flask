@@ -32,12 +32,12 @@ class TeoremaDePitagoras():
         quadrado_da_hipotenusa = self.__hipotenusa**2    
         passa_subtraindo = quadrado_da_hipotenusa - quadrado_do_cateto
         cateto_final = passa_subtraindo ** (1/2) # ou 0,5    
-        return cateto_final
+        return round(cateto_final, 2)
       
     def calcular_hipotenusa(self):    
         quadrado_da_hipotenusa = self.__catetoO**2 + self.__catetoA**2
         hipotenusa = quadrado_da_hipotenusa ** (1/2)
-        return hipotenusa
+        return round(hipotenusa, 2)
    
     @staticmethod
     def strings_teorema(name):       
@@ -49,8 +49,8 @@ class TeoremaDePitagoras():
             name = "Dois campus devem ser preenchidos para calcular."
             return name
         elif "TypeError" in name:
-            name = "Número negativo não é possível."
+            name = "Número negativo não é possível. Veja se os dois lado preenchidos estão corretos."
             return name
-        
+
 
 

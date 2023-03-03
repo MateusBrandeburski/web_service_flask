@@ -5,8 +5,6 @@ from classes.formula_pitagoras import TeoremaDePitagoras
 calculadora_grafica = Blueprint('calculadora_grafica', __name__, template_folder='templates')
 
 
-
-
 # Rota index para protrocolo HTTPS GET. Ou seja, é a rota que renderiza a calculadora na tela.
 @calculadora_grafica.route("/calculadora", methods=['GET'])
 def index():
@@ -48,13 +46,14 @@ def calculadora():
                                                   hipotenusa=request.form.get('hipotenusa'))
                          
                          
-                         resposta = round(teorema.calcular_catetos(), 2)
+                         resposta = teorema.calcular_catetos()
                          return redirect(url_for('calculadora_grafica.index'))
-          
+                    
+                                
                     # calcula a hipotenusa
                     elif request.form.get('hipotenusa') == "":   
                          teorema = TeoremaDePitagoras(catetoA=request.form.get('cA'), catetoO=request.form.get('cO'))
-                         resposta = round(teorema.calcular_hipotenusa(), 2)
+                         resposta = teorema.calcular_hipotenusa()
                          return redirect(url_for('calculadora_grafica.index'))
                      
           # Tramento de erro para número negativo, se é calculado um lado de um retângulo retângulo, número negativo é impossível.         
