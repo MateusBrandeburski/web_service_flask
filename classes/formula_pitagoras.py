@@ -1,5 +1,5 @@
 
-
+# essa classe é usada tanto na rota "calculadora_grafica" quando na rota "calculadora_query" por isso algumas verificações precisam ser feitas de maneira diferentes.
 class TeoremaDePitagoras():
     
     def __init__(self,  catetoA=0, catetoO=0, hipotenusa=0):
@@ -31,14 +31,20 @@ class TeoremaDePitagoras():
         quadrado_do_cateto = self.__catetoA ** 2 or self.__catetoO ** 2
         quadrado_da_hipotenusa = self.__hipotenusa**2    
         passa_subtraindo = quadrado_da_hipotenusa - quadrado_do_cateto
-        cateto_final = passa_subtraindo ** (1/2) # ou 0,5    
-        return round(cateto_final, 2)
+        cateto_final = passa_subtraindo ** (1/2) # ou 0,5  
+        """Explicação dessa condicinal
+        Se a hipotenusa tiver o mesmo valor de um cateto, isso siguinifica que ele não é um triângulo retângulo. Logo, o cálculo é impossível e não se aplica. Porque o resultado será sempre 0 (zero)
+        """   
+        if cateto_final == 0.0:
+            return "Cálculo Impossível"
+        else:
+            return round(cateto_final, 2)
       
     def calcular_hipotenusa(self):    
         quadrado_da_hipotenusa = self.__catetoO**2 + self.__catetoA**2
         hipotenusa = quadrado_da_hipotenusa ** (1/2)
         return round(hipotenusa, 2)
-   
+        
     @staticmethod
     def strings_teorema(name):       
         if "hipotenusa" in name:
