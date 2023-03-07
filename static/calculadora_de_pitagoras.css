@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 @font-face {
     font-family: Cyber;
@@ -27,10 +28,13 @@ body {
     justify-content: center;
     font-size: 55px;
     font-family: 'Orbitron', sans-serif;
-    margin-top: 4%;
     color: #ff0303;
-    /* -webkit-text-stroke: 1px rgb(241, 241, 241); */
 
+}
+
+.titulo__subtitulo {
+  display: flex;
+  justify-content: center;
 }
 
 .inputs {
@@ -245,12 +249,13 @@ input[type=number] {
 .resposta {
     display: flex; 
     justify-content: center; 
-    margin-top: 0px;
+    margin-top: 50px;
     font-size: 24px;
     font-family: 'Orbitron', sans-serif;
     background-repeat: no-repeat;
     width: 50%;
-    margin-left: 25%; 
+    margin-left: 25%;
+
     /* -webkit-text-stroke: 1px #8861e4; */
 }
 
@@ -264,6 +269,7 @@ img {
 .informacoes {
   display: flex;
   justify-content: center;
+  display: none;
 }
 
 
@@ -278,6 +284,7 @@ img {
 .explicacao__list {
     margin-top: 1.2%;
     margin-right: 10%;
+    
 
 }
 
@@ -297,3 +304,72 @@ strong {
   left: 0;
 }
 
+/* :root {
+  --yellow-color: #b30505; 
+  --red-color: #ff003c;
+  --black-color: #f5f5f5;
+  --blue-color: #00f0ff;
+}
+
+.resposta__final {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  outline: none;
+  background-color: var(--yellow-color);
+  color: var(--black-color);
+  cursor: pointer;
+  padding: 20px 25px;
+  position: relative;
+  font-family: Tomorrow, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+} */
+
+:root {
+  --yellow-color: #fcee09; 
+  --red-color: #ff003c;
+  --black-color: #050a0e;
+  --blue-color: #00f0ff;
+}
+
+.resposta__final {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--black-color);
+  outline: none;
+  background-color: var(--yellow-color);
+  color: var(--black-color);
+  cursor: pointer;
+  padding: 20px 25px;
+  position: relative;
+  font-family: Tomorrow, sans-serif;
+  font-size: .85rem;
+  text-transform: uppercase;
+}
+
+.resposta__final::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: -14px;
+  left: -13px;
+  background-color: var(--yellow-color);
+  border-top: 2px solid var(--black-color);
+  transform: rotate(45deg);
+}
+
+.resposta__final::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: -14px;
+  right: -13px;
+  background-color: var(--yellow-color);
+  border-bottom: 2px solid var(--black-color);
+  transform: rotate(45deg);
+}
