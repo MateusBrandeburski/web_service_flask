@@ -36,14 +36,14 @@ class TeoremaDePitagoras():
         Se a hipotenusa tiver o mesmo valor de um cateto, isso siguinifica que ele não é um triângulo retângulo. Logo, o cálculo é impossível e não se aplica. Porque o resultado será sempre 0 (zero)
         """   
         if cateto_final == 0.0:
-            return "Cálculo Impossível"
+            return "Cálculo Impossível. Resultado 0.0"
         else:
-            return round(cateto_final, 2)
+            return f"Cateto = {round(cateto_final, 2)}"
       
     def calcular_hipotenusa(self):    
         quadrado_da_hipotenusa = self.__catetoO**2 + self.__catetoA**2
         hipotenusa = quadrado_da_hipotenusa ** (1/2)
-        return round(hipotenusa, 2)
+        return f"Hipotenusa = {round(hipotenusa, 2)}"
         
     @staticmethod
     def strings_teorema(name):       
@@ -55,7 +55,7 @@ class TeoremaDePitagoras():
             name = "Dois campus devem ser preenchidos para calcular."
             return name
         elif "TypeError" in name:
-            name = "Número negativo não é possível. Veja se os dois lado preenchidos estão corretos."
+            name = "Cálculo Impossível. Resultado Nº negativo."
             return name
 
 

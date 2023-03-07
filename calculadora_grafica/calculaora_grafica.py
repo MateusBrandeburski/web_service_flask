@@ -43,8 +43,7 @@ def calculadora():
                          teorema = TeoremaDePitagoras(catetoA=request.form.get('cA'),
                                                   catetoO=request.form.get('cO'), 
                                                   hipotenusa=request.form.get('hipotenusa'))
-                         
-                         
+
                          resposta = teorema.calcular_catetos()
                          return redirect(url_for('calculadora_grafica.index'))
                     

@@ -8,21 +8,30 @@
     <link rel="stylesheet" href="/static/calculadora_de_pitagoras.css">
     <!-- para poder ver com um extensão do vscode -->
     <link rel="stylesheet" href="/homolocacao/static/calculadora_de_pitagoras.css">
-    <title>calculadora De Pitágoras</title>
+    <title>Cyber Calculadora De Pitágoras</title>
 </head>
 <body>
     <header class="cabecalho">
         <nav class="cabecalho__menu">
-            <h1 class="titulo">Calculadora de Pitágoras</h1>
+            <!-- barra de tarefas no futuro -->
         </nav>
     </header>
         <div>
+            <h1 class="titulo">Calculadora de Pitágoras</h1>
             <div class="fundo_formulario">
                 <form method='post' action='/' class="formulario">
-                    <input type='number' min="0" step='0.01' placeholder="Cateto Adjacente"  class='form-control' name='cA' value="{{cA}}">
-                    <input type='number' min='0' step='0.01' placeholder="Cateto Oposto" class='form-control' name='cO' value="{{cB}}">
-                    <input type='number' min='0' step='0.01' placeholder="Hipotenusa" class='form-control' name='hipotenusa' value="{{hipotenusa}}">
-                    <button name="action" value="calcular">Calcular</button>
+                    <div class="inputs">
+                        <input type='number' min="0" step='0.01' placeholder="Cateto"  class='form-control' name='cA' value="{{cA}}">
+                        <p class="inputs__sinais"> + </p>
+                        <input type='number' min='0' step='0.01' placeholder="Cateto" class='form-control' name='cO' value="{{cB}}">
+                        <p class="inputs__sinais"> = </p>
+                        <input type='number' min='0' step='0.01' placeholder="Hipotenusa" class='form-control' name='hipotenusa' value="{{hipotenusa}}">
+                    </div>
+                    <button class="cybr-btn" name="action" value="calcular">Calcular
+                        <span aria-hidden></span>
+                        <span aria-hidden class="cybr-btn__glitch">Cyber_</span>
+                        <span aria-hidden class="cybr-btn__tag">v2.0</span>
+                    </button>
                 </form> 
             </div>
         </div>
@@ -31,8 +40,17 @@
             <p>{{resposta}}</p>
         {% endif %}
     </div>
+    <h2>Instruções:</h2>
+    <div class="explicacao">
+        <ul>
+            <li class="explicacao__list">Você pode testar a calculadora usando um triângulo retângulo já pronto como exemplo: <strong>Ca(4) + Ca(3) = h(5).</strong></li>
+            <li class="explicacao__list">Se a <strong>hipotenusa e o cateto tiverem valores iguais, o resultado é impossível</strong>. Pois não é um triângulo retângulo e sua soma pelo teorema resulta em 0 (zero).</li>
+            <li class="explicacao__list">Se o <strong>cateto for maior que a hipotenusa, o resultado também é impossível</strong>. Porque em um triângulo retângulo, a hipotenusa é o lado maior. </li>
+            <li class="explicacao__list">Se <strong>nenhum dado for passado</strong>, ou apenas um lado, ou ainda todos os lados, um aviso aparecerá.</li>
+        </ul>      
+    </div>
     <footer class="rodape">
-        <p>Mateus Brandeburski Ramos</p>
+        <p>Mateus Brandeburski Ramos</p>   
     </footer>
 </body>
 </html>
