@@ -65,11 +65,9 @@ input[type=number] {
 
 }
 
-button {
+.botao_calcular{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 39%;
+  justify-content: center
 }
 
 .cybr-btn {
@@ -247,7 +245,7 @@ button {
 .resposta {
     display: flex; 
     justify-content: center; 
-    margin-top: 0;
+    margin-top: 0px;
     font-size: 24px;
     font-family: 'Orbitron', sans-serif;
     background-repeat: no-repeat;
@@ -256,15 +254,24 @@ button {
     /* -webkit-text-stroke: 1px #8861e4; */
 }
 
-h2 {
-  font-family: 'Orbitron', sans-serif;
-  margin-left: 20px;
-  margin-top: 50%;
+img {
+  display: flex;
+  justify-content: center;
 }
+
+
+
+.informacoes {
+  display: flex;
+  justify-content: center;
+}
+
+
 
 .explicacao {
     font-family: 'Montserrat', sanerif;
     font-size: 20px;
+    display: none;
     
 }
 
@@ -279,11 +286,14 @@ strong {
 }
 
 .rodape {
-    display: flex;
-    justify-content: center;
-    background-color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
-    margin-top: 1%;
-    color: #000000;
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Orbitron', sans-serif;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 

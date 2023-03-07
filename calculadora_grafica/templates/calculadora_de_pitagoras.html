@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/static/calculadora_de_pitagoras.css">
     <!-- para poder ver com um extensão do vscode -->
     <link rel="stylesheet" href="/homolocacao/static/calculadora_de_pitagoras.css">
+    <!-- para visualizar no flask -->
+    <script defer src="/static/js/calculadora_de_pitagoras.js"></script>
+    <!-- para poder ver com um extensão do vscode -->
+    <script defer src="/homolocacao/static/js/calculadora_de_pitagoras.js"></script>
     <title>Cyber Calculadora De Pitágoras</title>
 </head>
 <body>
@@ -27,30 +31,37 @@
                         <p class="inputs__sinais"> = </p>
                         <input type='number' min='0' step='0.01' placeholder="Hipotenusa" class='form-control' name='hipotenusa' value="{{hipotenusa}}">
                     </div>
-                    <button class="cybr-btn" name="action" value="calcular">Calcular
-                        <span aria-hidden></span>
-                        <span aria-hidden class="cybr-btn__glitch">Cyber_</span>
-                        <span aria-hidden class="cybr-btn__tag">v2.0</span>
-                    </button>
+                    <div class="botao_calcular">
+                        <button class="cybr-btn" name="action" value="calcular">Calcular
+                            <span aria-hidden></span>
+                            <span aria-hidden class="cybr-btn__glitch">Calcular</span>
+                            <span aria-hidden class="cybr-btn__tag">v2.0</span>
+                        </button>
+                     </div>
                 </form> 
             </div>
         </div>
-    <div class="resposta">
-        {% if resposta %}
-            <p>{{resposta}}</p>
-        {% endif %}
-    </div>
-    <h2>Instruções:</h2>
-    <div class="explicacao">
-        <ul>
-            <li class="explicacao__list">Você pode testar a calculadora usando um triângulo retângulo já pronto como exemplo: <strong>Ca(4) + Ca(3) = h(5).</strong></li>
-            <li class="explicacao__list">Se a <strong>hipotenusa e o cateto tiverem valores iguais, o resultado é impossível</strong>. Pois não é um triângulo retângulo e sua soma pelo teorema resulta em 0 (zero).</li>
-            <li class="explicacao__list">Se o <strong>cateto for maior que a hipotenusa, o resultado também é impossível</strong>. Porque em um triângulo retângulo, a hipotenusa é o lado maior. </li>
-            <li class="explicacao__list">Se <strong>nenhum dado for passado</strong>, ou apenas um lado, ou ainda todos os lados, um aviso aparecerá.</li>
-        </ul>      
-    </div>
+        <div class="resposta">
+            {% if resposta %}
+                <p>{{resposta}}</p>
+            {% endif %}
+        </div>
+        <div class="informacoes">
+        <a id="show-or-hide"><img src="/static/image/text.gif" alt=""></a>
+        </div>
+        <div class="explicacao">
+            <ul>
+                <li class="explicacao__list">Você pode testar a calculadora usando um triângulo retângulo já pronto como exemplo: <strong>Ca(4) + Ca(3) = h(5).</strong></li>
+                <li class="explicacao__list">Se a <strong>hipotenusa e o cateto tiverem valores iguais, o resultado é impossível</strong>. Pois não é um triângulo retângulo e sua soma pelo teorema resulta em 0 (zero).</li>
+                <li class="explicacao__list">Se o <strong>cateto for maior que a hipotenusa, o resultado também é impossível</strong>. Porque em um triângulo retângulo, a hipotenusa é o lado maior. </li>
+                <li class="explicacao__list">Se <strong>nenhum dado for passado</strong>, ou apenas um lado, ou ainda todos os lados, um aviso aparecerá.</li>
+            </ul>      
+        </div>
+
     <footer class="rodape">
         <p>Mateus Brandeburski Ramos</p>   
     </footer>
 </body>
 </html>
+
+
