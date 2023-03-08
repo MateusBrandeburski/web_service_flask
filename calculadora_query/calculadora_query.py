@@ -17,15 +17,16 @@ def query_teorema():
     catetoO = request.args.get("catetoO") 
      
     try:
+        
         if (catetoA and hipotenusa) or (catetoO and hipotenusa): 
             teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO, hipotenusa=hipotenusa)
-            return render_template('resposta_query.html', name=teorema.strings_teorema(name="cateto"), resposta=round(teorema.calcular_catetos(), 2))
+            return render_template('resposta_query.html', name=teorema.strings_teorema(name="cateto"), resposta=teorema.calcular_catetos())
         
         elif catetoA and catetoO:      
             teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO)  
-              
-            return render_template('resposta_query.html', name=teorema.strings_teorema(name="hipotenusa"), resposta=round(teorema.calcular_hipotenusa(), 2))  
-           
+                
+            return render_template('resposta_query.html', name=teorema.strings_teorema(name="hipotenusa"), resposta=teorema.calcular_hipotenusa())  
+                
     except TypeError:
       return {"204":"no_content", "query":"faltam_parametros"}
   
