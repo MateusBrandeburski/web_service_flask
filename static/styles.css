@@ -24,7 +24,7 @@ body {
 
  }
 
-/* ---------------------Cabeçalho Animado---------------------- */
+/* ---------------------Início Cabeçalho Animado---------------------- */
  .cabecalho{
     /* background-color:#fd0202; */
     padding-bottom: 1%;
@@ -195,13 +195,15 @@ body {
 }
 
 
-/* ------------------------------------------------------------- */
+/* -----------------------FIM Cabeçalho Animado------------------------ */
 
+/* -----------------------paralelogramo css------------------------- */
 .linha_grafica_do_titulo {
   display: flex;
-  gap: 8px;
-  justify-content: center;
+  gap: 10px;
+  justify-content: space-between;
   flex-direction: row;
+
 }
 
 .linha_grafica_do_titulo__caixas {
@@ -212,6 +214,7 @@ body {
      -o-transform: skew(-20deg);
   background-color: #ff003c;
 }
+/* ------------------- FIM paralelogramo css---------------------- */
 
 
 .titulo {
@@ -222,7 +225,6 @@ body {
     color: #ff0303; */
 
 }
-
 
 .inputs {
   display: flex;
