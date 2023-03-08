@@ -35,11 +35,6 @@ body {
 }
 
 
-.titulo__subtitulo {
-  display: flex;
-  justify-content: center;
-}
-
 .inputs {
   display: flex;
   align-items: center;
@@ -76,7 +71,7 @@ input[type=number] {
 .botao_calcular{
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .cybr-btn {
@@ -111,7 +106,7 @@ input[type=number] {
   position: relative;
   font-weight: 700;
   border: 0;
-  min-width: 300px;
+  min-width: 250px;
   height: 75px;
   line-height: 75px;
   transition: background 0.2s;
@@ -315,23 +310,17 @@ input[type=number] {
 
 /*----------------------------------------------------------------*/
 
-img {
+
+.informacoes__botao {
   display: flex;
   justify-content: center;
 }
-
-
-.informacoes {
-  display: flex;
-  justify-content: center;
-
-}
-
 
 
 .explicacao {
     font-family: 'Montserrat', sanerif;
     font-size: 20px;
+    align-items: center;
     display: none;
     
 }
@@ -340,14 +329,16 @@ img {
     margin-top: 1.2%;
     margin-right: 10%;
     
-
 }
 
+/* Marca texto */
 strong {
     background-color: rgb(241, 37, 37);
 }
 
-.rodape {
+
+
+/* .rodape {
   display: flex;
   justify-content: center;
   background: #ffffff;
@@ -357,5 +348,5 @@ strong {
   position: absolute;
   bottom: 0;
   left: 0;
-}
+} */
 
