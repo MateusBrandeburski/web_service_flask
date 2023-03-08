@@ -23,14 +23,17 @@ body {
     background-color:#fd0202;
  }
  
+
+ 
 .titulo {
     display: flex;
     justify-content: center;
-    font-size: 55px;
+    /* font-size: 55px;
     font-family: 'Orbitron', sans-serif;
-    color: #ff0303;
+    color: #ff0303; */
 
 }
+
 
 .titulo__subtitulo {
   display: flex;
@@ -69,9 +72,11 @@ input[type=number] {
 
 }
 
+/* -------------------------------- Botão Cyberpunk 2777----------------------------------- */
 .botao_calcular{
   display: flex;
-  justify-content: center
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .cybr-btn {
@@ -246,89 +251,23 @@ input[type=number] {
   --primary-hue: 260;
 }
 
+/* ------------------------------------------------------------------ */
+
+/* ---------------------Resposta Personalizada----------------------- */
+
 .resposta {
-    display: flex; 
-    justify-content: center; 
-    margin-top: 50px;
-    font-size: 24px;
-    font-family: 'Orbitron', sans-serif;
-    background-repeat: no-repeat;
-    width: 50%;
-    margin-left: 25%;
-
-    /* -webkit-text-stroke: 1px #8861e4; */
-}
-
-img {
-  display: flex;
-  justify-content: center;
-}
-
-
-
-.informacoes {
-  display: flex;
-  justify-content: center;
-  display: none;
-}
-
-
-
-.explicacao {
-    font-family: 'Montserrat', sanerif;
-    font-size: 20px;
-    display: none;
-    
-}
-
-.explicacao__list {
-    margin-top: 1.2%;
-    margin-right: 10%;
-    
-
-}
-
-strong {
-    background-color: rgb(241, 37, 37);
-}
-
-.rodape {
-  display: flex;
-  justify-content: center;
-  background: #ffffff;
-  color: #000000;
-  font-family: 'Orbitron', sans-serif;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-/* :root {
-  --yellow-color: #b30505; 
-  --red-color: #ff003c;
-  --black-color: #f5f5f5;
-  --blue-color: #00f0ff;
-}
-
-.resposta__final {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  outline: none;
-  background-color: var(--yellow-color);
-  color: var(--black-color);
-  cursor: pointer;
-  padding: 20px 25px;
-  position: relative;
-  font-family: Tomorrow, sans-serif;
+  display: flex; 
+  justify-content: center; 
+  margin-top: 30px;
   font-size: 24px;
-  text-transform: uppercase;
-} */
+  font-family: 'Orbitron', sans-serif;
+  background-repeat: no-repeat;
+  width: 50%;
+  margin-left: 25%;
+}
 
 :root {
-  --yellow-color: #fcee09; 
+  --yellow-color: #f10909; 
   --red-color: #ff003c;
   --black-color: #050a0e;
   --blue-color: #00f0ff;
@@ -373,3 +312,50 @@ strong {
   border-bottom: 2px solid var(--black-color);
   transform: rotate(45deg);
 }
+
+/*----------------------------------------------------------------*/
+
+img {
+  display: flex;
+  justify-content: center;
+}
+
+
+.informacoes {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+.explicacao {
+    font-family: 'Montserrat', sanerif;
+    font-size: 20px;
+    display: none;
+    
+}
+
+.explicacao__list {
+    margin-top: 1.2%;
+    margin-right: 10%;
+    
+
+}
+
+strong {
+    background-color: rgb(241, 37, 37);
+}
+
+.rodape {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Orbitron', sans-serif;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
