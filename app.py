@@ -1,11 +1,13 @@
 from flask import Flask, Blueprint, url_for
 from calculadora_grafica.calculaora_grafica import calculadora_grafica
 from calculadora_query.calculadora_query import calcularora_query
+from limpa_email.limpa_email import limpa_email
 import asyncio
 
 app = Flask(__name__)
 app.register_blueprint(calculadora_grafica)
 app.register_blueprint(calcularora_query)
+app.register_blueprint(limpa_email)
 
 
 if __name__ == '__main__':
