@@ -199,20 +199,14 @@ body {
 
 /* -----------------------paralelogramo css------------------------- */
 .linha_grafica_do_titulo {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  flex-direction: row;
-
-}
-
-.linha_grafica_do_titulo__caixas {
-  width: 30px;
   height: 50px;
-  -webkit-transform: skew(-20deg);
-   -moz-transform: skew(-20deg);
-     -o-transform: skew(-20deg);
-  background-color: #ff003c;
+  background-image: repeating-linear-gradient(
+    110deg,
+    transparent,
+    transparent 10px,
+    #ff003c 10px,
+    #ff003c 40px
+  );
 }
 /* ------------------- FIM paralelogramo css---------------------- */
 
@@ -530,15 +524,4 @@ strong {
 
 
 
-/* .rodape {
-  display: flex;
-  justify-content: center;
-  background: #ffffff;
-  color: #000000;
-  font-family: 'Orbitron', sans-serif;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-} */
 
