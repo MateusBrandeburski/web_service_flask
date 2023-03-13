@@ -1,10 +1,10 @@
-from flask import Blueprint, request, render_template, redirect, url_for
+from flask import Blueprint, request, render_template, redirect
 from classes.formula_pitagoras import TeoremaDePitagoras
 
 calculadora_grafica = Blueprint('calculadora_grafica', __name__, template_folder='templates')
 
 
-# Rota index para protrocolo HTTPS GET. Ou seja, é a rota que renderiza a calculadora na tela.
+# Rota que renderiza a calculadora.
 @calculadora_grafica.route("/", methods=['GET'])
 def index():
          
@@ -18,8 +18,8 @@ def index():
           return render_template('calculadora_de_pitagoras.html')
      
           
-# Rota POST que serve apenas as ações da Calculadora de Pitágoras 
-@calculadora_grafica.route("/", methods=['POST'])
+# Rota que serve apenas para processar o formulário da Calculadora de Pitágoras 
+@calculadora_grafica.route("/calculadora", methods=['POST'])
 def calculadora():
      
      # verifica se o botão calcular foi clicado
@@ -32,7 +32,7 @@ def calculadora():
                     
                     global resposta
                     resposta = TeoremaDePitagoras.strings_teorema(name="falta_parametros")
-                    return redirect(url_for('calculadora_grafica.index'))
+                    return redirect('/')
                
                # Se 2 campos forem preenchidos corretamente:
                else:
@@ -45,18 +45,18 @@ def calculadora():
                                                   hipotenusa=request.form.get('hipotenusa'))
 
                          resposta = teorema.calcular_catetos()
-                         return redirect(url_for('calculadora_grafica.index'))
+                         return redirect('/')
                     
                                 
                     # calcula a hipotenusa
                     elif request.form.get('hipotenusa') == "":   
                          teorema = TeoremaDePitagoras(catetoA=request.form.get('cA'), catetoO=request.form.get('cO'))
                          resposta = teorema.calcular_hipotenusa()
-                         return redirect(url_for('calculadora_grafica.index'))
+                         return redirect('/')
                      
           # Tramento de erro para número negativo, se é calculado um lado de um retângulo retângulo, número negativo é impossível.         
           except TypeError:
                resposta =  TeoremaDePitagoras.strings_teorema(name="TypeError")      
-               return redirect(url_for('calculadora_grafica.index'))
+               return redirect('/')
                
                
