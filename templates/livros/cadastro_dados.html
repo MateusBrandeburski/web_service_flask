@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros</title>
-</head>
-<body>
-    <div class="container">
-        <div class="page-header">
-            <h1>{{ titulo }}</h1>
-        </div>
+{% extends 'template_generico.html' %}
+{% block conteudo %}
         <form action="/criar" method="post">
           <fieldset>
             <div class="form-group">
@@ -18,16 +7,14 @@
               <input type="text" id="nome" name="nome" class="form-control">
             </div>
             <div class="form-group">
-              <label for="categoria">Autor</label>
+              <label for="categoria">CPF</label>
               <input type="text" id="categoria" name="categoria" class="form-control">
             </div>
             <div class="form-group">
-              <label for="console">Editora</label>
+              <label for="console">Situação TCU</label>
               <input type="text" id="console" name="console" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
           </fieldset>
         </form>
-      </div>
-</body>
-</html>
+{% endblock %}

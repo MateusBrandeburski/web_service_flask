@@ -1,3 +1,5 @@
+
+// programa para aparecer as informações da div ao clicar no link //
 var btn = document.querySelector('#show-or-hide');
 var container = document.querySelector('.explicacao');
 

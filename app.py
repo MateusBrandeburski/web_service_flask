@@ -4,6 +4,7 @@ from blueprint_calculadora_query.calculadora_query import calcularora_query
 from blueprint_livros.livros import livros
 
 app = Flask(__name__)
+app.secret_key = ['mateus']
 
 app.register_blueprint(calculadora_grafica)
 app.register_blueprint(calcularora_query)

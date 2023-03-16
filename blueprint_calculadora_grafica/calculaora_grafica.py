@@ -12,10 +12,10 @@ def index():
      global resposta
      if 'resposta' in globals() and resposta != "":
           
-          return render_template('calculadora_de_pitagoras.html', resposta=resposta)  
+          return render_template('calculadora_grafica/calculadora_de_pitagoras.html', resposta=resposta)  
         
      else:
-          return render_template('calculadora_de_pitagoras.html')
+          return render_template('calculadora_grafica/calculadora_de_pitagoras.html')
      
           
 # Rota que serve apenas para processar o formulário da Calculadora de Pitágoras 
