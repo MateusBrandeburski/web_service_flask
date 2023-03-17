@@ -523,5 +523,40 @@ strong {
 }
 
 
+/* Estilos para telas com largura menor ou igual a 600px */
+@media (max-width: 600px) {
+  .cabecalho__menu {
+    gap: 20px;
+    font-size: 16px;
+  }
+  
+  .cabecalho__menu__link {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para telas com largura entre 601px e 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .cabecalho__menu {
+    gap: 50px;
+    font-size: 18px;
+  }
+  
+  .cabecalho__menu__link {
+    font-size: 16px;
+  }
+}
+
+/* Estilos para telas com largura maior que 1024px */
+@media (min-width: 1025px) {
+  .cabecalho__menu {
+    gap: 80px;
+    font-size: 20px;
+  }
+  
+  .cabecalho__menu__link {
+    font-size: 20px;
+  }
+}
 
 
