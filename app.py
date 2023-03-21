@@ -5,6 +5,7 @@ from blueprints.login.login import login
 from blueprints.home.home import home
 from blueprints.calculadora_grafica.regra_de_3_simples.regra_de_3_simples import regra_3
 from blueprints.limpa_email.limpa_email import limpa_email
+from blueprints.RPA.rpa import rpa
 
 app = Flask(__name__)
 # secret_key é para o cookie do navegador
@@ -16,6 +17,7 @@ app.register_blueprint(login)
 app.register_blueprint(home)
 app.register_blueprint(regra_3)
 app.register_blueprint(limpa_email)
+app.register_blueprint(rpa)
 
 
 if __name__ == '__main__':
