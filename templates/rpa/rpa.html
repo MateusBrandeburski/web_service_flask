@@ -1,8 +1,9 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
 
-<button type="button" class="btn btn-primary">Atualizar</button>
-
+<form action="/minera-dados" method="get">
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+</form>
 <h1>Web scraping - Beutifulsoup4</h1>
 <h3>Últimas notícias científicas</h2>
 <table class="table table-striped table-responsive table-bordered">
@@ -13,10 +14,10 @@
         </tr>
     </thead>
     <tbody>
-        {% for scraping1_noticia in scraping1 %}
+        {% for noticia, link in itens_scraping1 %}
         <tr>
-            <td>{{ scraping1_noticia }}</td>
-            <td></td>
+            <td>{{ noticia }}</td>
+            <td><a href="{{ link }}" target="_blank">Notícia</a></td>
             <td>Space Today</td>
         </tr>
         {% endfor %}
@@ -36,7 +37,7 @@
     {% for noticia, link in itens_scraping2 %}
         <tr>
             <td>{{ noticia }}</td>
-            <td><a href="{{ link }}">Notícia</a></td>
+            <td><a href="{{ link }}" target="_blank">Notícia</a></td>
             <td>ANMTV</td>
         </tr>
     {% endfor %} 
