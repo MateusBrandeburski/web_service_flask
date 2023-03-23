@@ -1,26 +1,29 @@
-from flask import Blueprint, render_template, request, redirect, session, flash, url_for
-from bs4 import BeautifulSoup
-import requests
+from flask import Blueprint, render_template, request, redirect, session, flash, url_for, Flask
+from classes.web_scraping import WebScrapingBS4
 
 
 rpa = Blueprint('rpa', __name__, template_folder='templates')
-
-response = requests.get('https://g1.globo.com/')
-content = response.content
 
 
 @rpa.route('/rpa')
 def index():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        
           return redirect(url_for('login.index'))
       
     else:
-        site = BeautifulSoup(content, 'html.parser')
-        noticias = site.find_all('div', attrs={'class': 'feed-post-body'})
-        listas = []
-        for noticia in noticias:
-            resumo = noticia.find('a', attrs={'class':'feed-post-link'}).text
-            listas.append(resumo)
-            
-        return render_template('rpa/rpa.html', listas=listas)
+        
+        scraping1 = WebScrapingBS4(link="https://spacetoday.com.br/")
+        scraping1_noticias = scraping1.perga_texto(elementoFILHO='a', elementoPAI='h2', tipoPAI='class', descricaoPAI='entry-title h2')
+
+
+        scraping2 = WebScrapingBS4(link='https://anmtv.com.br/')
+        noticias = scraping2.perga_texto(elementoPAI='h3', tipoPAI='class', descricaoPAI='post__title typescale-2_5 line-limit-child line-limit-3', elementoFILHO='a')
+        links = scraping2.pega_url(elementoPAI='h3', tipoPAI='class', descricaoPAI='post__title typescale-2_5 line-limit-child line-limit-3', elementoFILHO='a')
+        
+        
+        itens_scraping2=zip(noticias, links)
+        
+        return render_template('rpa/rpa.html', scraping1=scraping1_noticias, itens_scraping2=itens_scraping2)
+
 

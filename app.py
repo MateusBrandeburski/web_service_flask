@@ -7,7 +7,9 @@ from blueprints.calculadora_grafica.regra_de_3_simples.regra_de_3_simples import
 from blueprints.limpa_email.limpa_email import limpa_email
 from blueprints.RPA.rpa import rpa
 
+
 app = Flask(__name__)
+
 # secret_key é para o cookie do navegador
 app.secret_key = ['mateus']
 
