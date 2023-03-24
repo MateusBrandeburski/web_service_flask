@@ -11,7 +11,7 @@ from blueprints.RPA.rpa import rpa
 app = Flask(__name__)
 
 # secret_key é para o cookie do navegador
-app.secret_key = ['mateus']
+app.secret_key = ['M4T3us']
 
 app.register_blueprint(calculadora_grafica)
 app.register_blueprint(calcularora_query)

@@ -18,18 +18,21 @@ def index():
 @rpa.route('/minera-dados')
 def minera_dados():
     
+        """ bloco de scraping
+        Aqui todos os elementos html são passados como parâmetro das suas respectivas funções. Na classe, passa-se apenas o link do scraping.
+        """
         scraping1 = WebScrapingBS4(link="https://spacetoday.com.br/")
         noticias = scraping1.perga_texto(elementoFILHO='a', elementoPAI='h2', tipoPAI='class', descricaoPAI='entry-title h2')
-        links = scraping1.pega_url(elementoFILHO='a', elementoPAI='h2', tipoPAI='class', descricaoPAI='entry-title h2')
-        
+        links = scraping1.pega_url(elementoFILHO='a', elementoPAI='h2', tipoPAI='class', descricaoPAI='entry-title h2') 
         itens_scraping1=zip(noticias, links)
 
 
         scraping2 = WebScrapingBS4(link='https://anmtv.com.br/')
         noticias = scraping2.perga_texto(elementoPAI='h3', tipoPAI='class', descricaoPAI='post__title typescale-2_5 line-limit-child line-limit-3', elementoFILHO='a')
-        links = scraping2.pega_url(elementoPAI='h3', tipoPAI='class', descricaoPAI='post__title typescale-2_5 line-limit-child line-limit-3', elementoFILHO='a')
-        
+        links = scraping2.pega_url(elementoPAI='h3', tipoPAI='class', descricaoPAI='post__title typescale-2_5 line-limit-child line-limit-3', elementoFILHO='a') 
         itens_scraping2=zip(noticias, links)
         
-        return render_template('rpa/rpa.html',  itens_scraping1=itens_scraping1, itens_scraping2=itens_scraping2)
-        
+
+    
+      
+        return render_template('rpa/rpa.html',  itens_scraping1=itens_scraping1, itens_scraping2=itens_scraping2)   

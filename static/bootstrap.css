@@ -583,6 +583,13 @@ progress {
   margin-bottom: 0;
 }
 
+.rodape {
+  flex-grow: 0;
+  text-align: center;
+  padding: 30px;
+  background-color: #06357a;
+}
+
 .blockquote-footer {
   margin-top: -1rem;
   margin-bottom: 1rem;

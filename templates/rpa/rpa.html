@@ -1,11 +1,38 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
-
-<form action="/minera-dados" method="get">
-    <button type="submit" class="btn btn-primary">Atualizar</button>
 </form>
-<h1>Web scraping - Beutifulsoup4</h1>
-<h3>Últimas notícias científicas</h2>
+<!-- título -->
+<div class=" text-center border-bottom">
+    <h1 class="display-4 fw-bold">Web scraping - Beutifulsoup4</h1>
+</div>
+<!-- <div class="p-3  bg-danger-subtle border border-primary-subtle rounded-3 text-center" >
+    A pesquisa leva alguns segundos, ok!? O scrping está varrendo o conteúdo inteiro de 2 fontes diferentes!
+</div> -->
+<!-- botton/form -->
+<form class="my-2 text-center" action="/minera-dados" method="get">
+    <button type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-primary">CLIQUE AQUI!
+    </button>
+</form>
+<!-- Janela modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">AVISO</h4>
+      </div>
+      <div class="modal-body">
+        Isso leva alguns segundos. Afinal, estamos mapeando sites diferentes e extraindo listas duplas deles.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- início das tabelas -->
+<div>
+{% if itens_scraping1 %}
+<h3 class="my-4" >Últimas notícias científicas:</h3>
 <table class="table table-striped table-responsive table-bordered">
     <thead class="thead-default">
             <th>Títulos das Noticias</th>
@@ -23,9 +50,7 @@
         {% endfor %}
     </tbody>
 </table>
-<p>Fonte: https://spacetoday.com.br/</p>
-
-<h3>Últimas notícias sobre animes</h3>
+<h3 class="my-4">Últimas notícias sobre animes:</h3>
 <table class="table table-striped table-responsive table-bordered">
     <thead class="thead-default">
             <th>Títulos das Noticias</th>
@@ -43,6 +68,6 @@
     {% endfor %} 
     </tbody>
 </table>
-<p>Fonte: https://anmtv.com.br/</p>
-
+{% endif %}
+</div>
 {% endblock %}
