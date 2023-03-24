@@ -15,16 +15,14 @@ def index():
           global resposta
           if 'resposta' in globals() and resposta != "":
           
-               return render_template('calculadora_grafica/calculadora_de_pitagoras.html', resposta=resposta)  
+               return render_template('calculadoras/teorema_de_pitagoras/calculadora_de_pitagoras.html', resposta=resposta)  
           
           else:
-               return render_template('calculadora_grafica/calculadora_de_pitagoras.html')
+               return render_template('calculadoras/teorema_de_pitagoras/calculadora_de_pitagoras.html')
      
-     
-          
           
 # Rota que serve apenas para processar o formulário da Calculadora de Pitágoras 
-@calculadora_grafica.route("/calculadora", methods=['POST'])
+@calculadora_grafica.route("/calculadora", methods=['POST']) # type: ignore
 def calculadora():
      
      # verifica se o botão calcular foi clicado
@@ -45,9 +43,9 @@ def calculadora():
                     # calcula os catetos
                     if request.form.get('hipotenusa') != "":   
                          # passando os 3 parâmetros, porque ele receber qualquer um dos lados do cateto para calcular o outro lado.
-                         teorema = TeoremaDePitagoras(catetoA=request.form.get('cA'),
-                                                  catetoO=request.form.get('cO'), 
-                                                  hipotenusa=request.form.get('hipotenusa'))
+                         teorema = TeoremaDePitagoras(catetoA=request.form.get('cA'),  # type: ignore
+                                                  catetoO=request.form.get('cO'),   # type: ignore
+                                                  hipotenusa=request.form.get('hipotenusa'))  # type: ignore
 
                          resposta = teorema.calcular_catetos()
                          return redirect(url_for('calculadora_grafica.index'))
@@ -55,13 +53,11 @@ def calculadora():
                                 
                     # calcula a hipotenusa
                     elif request.form.get('hipotenusa') == "":   
-                         teorema = TeoremaDePitagoras(catetoA=request.form.get('cA'), catetoO=request.form.get('cO'))
+                         teorema = TeoremaDePitagoras(catetoA=request.form.get('cA'), catetoO=request.form.get('cO'))  # type: ignore
                          resposta = teorema.calcular_hipotenusa()
                          return redirect(url_for('calculadora_grafica.index'))
                      
           # Tramento de erro para número negativo, se é calculado um lado de um retângulo retângulo, número negativo é impossível.         
           except TypeError:
                resposta =  TeoremaDePitagoras.strings_teorema(name="TypeError")      
-               return redirect(url_for('calculadora_grafica.index'))
-               
-               
+               return redirect(url_for('calculadora_grafica.index'))   

@@ -5,7 +5,7 @@ from classes.formula_pitagoras import TeoremaDePitagoras
 calcularora_query = Blueprint('calculadora_query', __name__, template_folder='templates')
 
 
-@calcularora_query.route("/teorema_de_pitagoras", methods=["GET"])
+@calcularora_query.route("/teorema_de_pitagoras", methods=["GET"])  # type: ignore
 def query_teorema():
     """Como funciona essa rota:
     O aplicativo está sendo desenvolvido usando POO, por isso, os parâmetros são passado na instância da classe TeoremaDePitagoras. 
@@ -19,11 +19,11 @@ def query_teorema():
     try:
         
         if (catetoA and hipotenusa) or (catetoO and hipotenusa): 
-            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO, hipotenusa=hipotenusa)
+            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO, hipotenusa=hipotenusa)  # type: ignore
             return render_template('resposta_query.html', name=teorema.strings_teorema(name="cateto"), resposta=teorema.calcular_catetos())
         
         elif catetoA and catetoO:      
-            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO)  
+            teorema = TeoremaDePitagoras(catetoA=catetoA, catetoO=catetoO)    # type: ignore
                 
             return render_template('resposta_query.html', name=teorema.strings_teorema(name="hipotenusa"), resposta=teorema.calcular_hipotenusa())  
                 
