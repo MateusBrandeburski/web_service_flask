@@ -5,14 +5,6 @@
 <div class=" text-center border-bottom">
     <h1 class="display-4 fw-bold">Web scraping  Beutifulsoup4</h1>
 </div>
-<!-- <div class="p-3  bg-danger-subtle border border-primary-subtle rounded-3 text-center" >
-    A pesquisa leva alguns segundos, ok!? O scrping está varrendo o conteúdo inteiro de 2 fontes diferentes!
-</div> -->
-<!-- botton/form -->
-<form class="my-2 text-center" action="/minera-dados" method="get">
-    <button type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-outline-dark">CLIQUE AQUI!
-    </button>
-</form>
 <!-- Janela modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -68,6 +60,21 @@
     {% endfor %} 
     </tbody>
 </table>
-{% endif %}
 </div>
+{% else %}
+  <div class="container my-5">
+    <div class="bg-primary-subtle p-5 rounded">
+      <div class="col-sm-8 py-5 mx-auto">
+        <h1 class="display-5 fw-normal text-center">💻 Raspagem de dados! 💻</h1>
+        <p class="fs-5">A raspagem de dados é uma ferramenta poderosa para aqueles que querem formar datahubs ou analizar dados. 
+        <p>Para esse exemplo será usado dois sites. O aplicaivo buscará por suas notícias principais e também o link dessas noticias.</p>
+        <!-- botton/form -->
+        <form class="my-2 text-center" action="/minera-dados" method="get">
+          <button type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-outline-dark">CLIQUE AQUI PARA TESTAR!
+          </button>
+      </form>
+    </div>
+    </div>
+  </div>
+{% endif %}
 {% endblock %}
