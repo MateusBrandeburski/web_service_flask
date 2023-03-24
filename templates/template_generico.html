@@ -23,25 +23,30 @@
   </head>
   <body class="p-3 m-0 border-0 bd-example">
     <!-- inicio da barra de navegação -->
+
     <header class="site-header sticky-top py-1">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid"> 
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="/static/image/apple-touch-icon.png" alt="logo" width="30" height="24" class="d-inline-block align-text-top"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav ">
               <a class="nav-link active" href="{{url_for('home.index')}}" style="vertical-align: inherit;" style="vertical-align: inherit;">Home</a>
               <a class="nav-link active" href="{{url_for('rpa.index')}}" style="vertical-align: inherit;" style="vertical-align: inherit;">Web Scraping</a>
-              <a class="nav-link active" aria-current="page" href="{{url_for('regra_3.index')}}" style="vertical-align: inherit;" style="vertical-align: inherit;">Calculadoras</a>
+              <a class="nav-link disabled" aria-current="page" href="{{url_for('regra_3.index')}}" style="vertical-align: inherit;" style="vertical-align: inherit;">Calculadoras</a>
               <a class="nav-link disabled" href="#" style="vertical-align: inherit;" style="vertical-align: inherit;">API</a>
+              <div class="navbar-nav nav justify-content-end">
+                <form action="/logout" method="get">
+                    <button type="submit" class="btn btn-link nav-link active" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Logout
+                    </button>
+                </form>
+              </div>
             </div>
-        </div>
-        <!-- inicio botão logout -->
-        <div class="navbar-nav nav justify-content-end">
-            <form action="/logout" method="get">
-                <button type="submit" class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Logout
-                </button>
-            </form>
           </div>
-        <!--  fim botao logout -->
+        </div>
+        
       </nav>
     </header>
     <!-- fim da barra da nevegação -->
