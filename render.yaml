@@ -1,0 +1,9 @@
+services:
+  - name: web
+    dockerfile: Dockerfile
+    env: python=python3
+    start_command: gunicorn app:create_app() --bind 0.0.0.0:$PORT --worker-tmp-dir /dev/shm --workers 1 --threads 8 --timeout 0
+    health_check:
+      path: /
+      port: $PORT
+      protocol: http
