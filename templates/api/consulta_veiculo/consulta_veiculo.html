@@ -1,0 +1,33 @@
+{% extends 'template_generico.html' %}
+{% block conteudo %}
+
+
+<h3 class="my-4" >Consulta Veículo DF - Situação do Financiamento</h3>
+<form method="post" action="/processa-dados-detran-df">
+    <p><label>Placa:</label> <input class="form-control" type="text" name="placa" required></p>
+    <p><label>Renavan:</label> <input class="form-control" type="text" name="renavam" required></p>
+    <p><button class="btn btn-primary" type="submit">Entrar</button></p>
+</form>
+
+<table class="table table-striped table-responsive table-bordered">
+    <thead class="thead-default">
+            <th>situacao</th>
+            <th>Nome</th>
+            <th>Data de Quitação</th>
+            <th>Banco</th>
+        </tr>
+    </thead>
+    {% if situacao %}
+    <tbody>
+
+        <tr>
+            <td>{{ situacao }}</td>
+            <td>{{ nome }}</td>
+            <td>{{ data }}</td>
+            <td>{{ banco }}</td>
+        </tr>
+    </tbody>
+    {% else %}
+</table>
+{% endif %}
+{% endblock %}

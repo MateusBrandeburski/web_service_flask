@@ -9,7 +9,8 @@ login = Blueprint('login', __name__, template_folder='templates')
 def index():
     
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return render_template('login/login.html')   
+        return render_template('login/login.html')  
+     
     return render_template('home/home.html')
  
    

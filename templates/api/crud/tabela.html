@@ -1,0 +1,47 @@
+{% extends 'template_generico.html' %}
+{% block conteudo %}
+<div class=" text-center">
+    <h1 class="display-4 fw-bold">Crud com SQLAlquemy</h1>
+</div>
+
+<div class="container my-5">
+    <div class="bg-primary-subtle p-1 rounded">
+      <div class="col-sm-8 py-5 mx-auto">
+        <h1 class="display-5 fw-normal text-center"></h1>
+        <p class="fs-4 text-center">Os dados dessa página estão sendo armazenados em um DB Postgres. 
+        <p class="text-center">Uma das vantagens do SQlAlchemy, além de persistir dados SQL escritos em python, é que ele se conecta a qualquer DB SQL (Oracle, Azure e outros).</p>
+        </div>
+    </div>
+  </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/add">Adicionar itens</a>
+            </div>
+            <div class="col-xs-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>nome</th>
+                            <th>idade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for e in estudantes %}
+                        <tr>
+                            <td>{{e.nome}}</td>
+                            <td>{{e.idade}}</td>
+                            <td>
+                                <a href="/edit/{{e.id}}">Editar</a>
+                                <a href="/delete/{{e.id}}">Excluir</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

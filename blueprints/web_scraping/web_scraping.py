@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, session, flash, url_for, Flask
 from classes.web_scraping import WebScrapingBS4
 
-
 web_scraping = Blueprint('web_scraping', __name__, template_folder='templates')
 
 @web_scraping.route('/web-scraping')
@@ -9,13 +8,14 @@ def index():
     
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login.index'))
-      
+
     else:      
         return render_template('web_scraping/web_scraping.html')
 
 
 @web_scraping.route('/minera-dados')
 def minera_dados():
+
     
         """ bloco de scraping
         Aqui todos os elementos html são passados como parâmetro das suas respectivas funções. Na classe, passa-se apenas o link do scraping.
@@ -31,3 +31,5 @@ def minera_dados():
         itens_scraping2=zip(noticias, links)
       
         return render_template('web_scraping/web_scraping.html',  itens_scraping1=itens_scraping1, itens_scraping2=itens_scraping2)   
+    
+    
