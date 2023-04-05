@@ -32,6 +32,10 @@ app.register_blueprint(web_scraping)
 app.register_blueprint(crud)
 app.register_blueprint(consulta_veiculo_df)
 
+app = create_app()
 
+if __name__ == '__main__':
+    app.run( host='0.0.0.0', port=8000, debug=True)
+    RuntimeError
 
 
