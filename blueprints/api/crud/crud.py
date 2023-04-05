@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, session, flash, url_for
 from .database import db
 
-
 crud = Blueprint('crud', __name__, template_folder='template')
 
 class Estudantes(db.Model):
@@ -12,10 +11,7 @@ class Estudantes(db.Model):
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
-        
-    
-
-
+         
 @crud.route('/crud')
 def index():
     estudantes = Estudantes.query.all()
