@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 # conexão com DB por meio do SQLALchemy
 def create_app():
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DB_TESTES_MATEUS"]
+    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://sistema_flask_user:GzIjDojpcbPvReumQY2s7VrrcwYeEt5w@dpg-cgir88fdvk4vd55k8uug-a/sistema_flask"
     db.init_app(app)
     return app
 
