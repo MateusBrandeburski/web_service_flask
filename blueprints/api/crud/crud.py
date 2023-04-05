@@ -12,6 +12,8 @@ class Estudantes(db.Model):
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
+        
+    
 
 
 @crud.route('/crud')
