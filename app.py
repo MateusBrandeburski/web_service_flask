@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 # conexão com DB por meio do SQLALchemy
 def create_app():
-    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://sistema_flask_user:GzIjDojpcbPvReumQY2s7VrrcwYeEt5w@dpg-cgir88fdvk4vd55k8uug-a/sistema_flask"
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DB_TESTES_MATEUS']
     db.init_app(app)
     return app
 
@@ -32,5 +32,7 @@ app.register_blueprint(web_scraping)
 app.register_blueprint(crud)
 app.register_blueprint(consulta_veiculo_df)
 
-
+app = create_app()
+if __name__ == '__main__':
+    app.run( host='0.0.0.0', port=8000, debug=True)
 

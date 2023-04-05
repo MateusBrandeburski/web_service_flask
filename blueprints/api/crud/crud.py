@@ -48,5 +48,3 @@ def delete(id):
     db.session.commit()
     return redirect(url_for('crud.index'))
 
-def init_app(app):
-     db.init_app(app)
