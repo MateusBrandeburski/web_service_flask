@@ -23,16 +23,18 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>nome</th>
-                            <th>idade</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Cidade</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for e in estudantes %}
+                        {% for e in endereco %}
                         <tr>
                             <td>{{e.nome}}</td>
-                            <td>{{e.idade}}</td>
+                            <td>{{e.email}}</td>
+                            <td>{{e.cidade}}</td>
                             <td>
                                 <a href="/edit/{{e.id}}">Editar</a>
                                 <a href="/delete/{{e.id}}">Excluir</a>
@@ -44,4 +46,5 @@
             </div>
         </div>
     </div>
+
 {% endblock %}

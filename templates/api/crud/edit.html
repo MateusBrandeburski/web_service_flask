@@ -1,19 +1,30 @@
 
 {% extends 'template_generico.html' %}
 {% block conteudo %}
-<h1 style="text-align: center;">Editar {{ estudante.nome }}</h1>
-<form action="/edit/{{ estudante.id }}" class="container" method="POST">
-    <div class="row">
-        <div class="col-md-6">
-            <input type="text" name="nome" id="nome" placeholder="nome" class="form-control" value="{{ estudante.nome }}">
-        </div>
-        <div class="col-md-6">
-            <input type="text" name="idade" id="idade" placeholder="idade" class="form-control"  value="{{ estudante.idade }}">
-        </div>
-    </div>
-    <br>
-    <div class="row col-xs-12">
+<h1 style="text-align: center;">Editar {{ endereco.nome }}</h1>
+
+<form action="/edit/{{ endereco.id }}" method="POST">
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nome Completo</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="nome" name="nome" value="{{ endereco.nome }}">
+      </div>
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Email</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email" name="email" value="{{ endereco.email }}">
+      </div>
+      
+      
+      <div class="input-group mb-3">
+        <span class="input-group-text">Cidade
+        </span>
+        <input type="text" class="form-control" placeholder="" aria-label="Server" id="cidade" name="cidade" value="{{ endereco.cidade }}">
+      </div>
+    
+      <div class="row col-xs-12">
         <button type="submit" class="btn btn-block btn-sucess">Enviar</button>
     </div>
-</form>
+    
+    </form>
 {% endblock %}
