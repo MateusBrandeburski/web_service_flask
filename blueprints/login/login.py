@@ -5,7 +5,7 @@ login = Blueprint('login', __name__, template_folder='templates')
 
 
 # Renderiza
-@login.route('/login', methods=['GET'])
+@login.route('/', methods=['GET'])
 def index():
     
     if 'usuario_logado' not in session or session['usuario_logado'] == None:

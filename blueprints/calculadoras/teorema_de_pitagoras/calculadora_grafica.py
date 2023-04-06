@@ -5,7 +5,7 @@ calculadora_grafica = Blueprint('calculadora_grafica', __name__, template_folder
 
 
 # Rota que renderiza a calculadora.
-@calculadora_grafica.route("/", methods=['GET'])
+@calculadora_grafica.route("/calculadora-grafica", methods=['GET'])
 def index():
          
      if 'usuario_logado' not in session or session['usuario_logado'] == None:

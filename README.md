@@ -1,24 +1,57 @@
-<h1 align="center"> Calculadora de Pitágoras </h1>
+### Olá, me chamo Mateus Brandeburski Ramos.
+
+
+- 🔭 Hoje trabalhando com desenvolvimento de Web Scraping, RPA e API's na Trovale Tecnolgia.
+- 🌱 Meu objetivo é a carreira de Desenvolvedor Back-end e depois Ciêntista de Dados.
+- 💬 Contate-me no e-mail: mateus.brandeburski92@gmail.com  
+
+
+
+
+<h1 align="center"> Sistema Web Service </h1>
 
 ## Descrição do Projeto:
 
-O projeto conta com duas formas de utilização. Uma é pela interface gráfica, feita para usuários e a outra é pelas rotas Query.
+O projeto evoluiu de uma calaculadora que calculava a fórmula de pitágoras para um projeto completo envolendo **bootstrap, POO, Jinja2, Blueprints, Beautiful4, SQLAlquemy, API's e Clean Code** 
 
-Trata-se de uma calculadora que calcula baseado na fórmula do Teorema de Pitágoras que diz: **É possível calcular qualquer um dos dados de um triângulo retângunlo, se tivermos o valor de 2 lados.** 
+## Evolução da Aplicação:
 
-*Cateteto Adjacente² + Cateto Oposto² = hipotenusa²*
-
-## Aplicação:
-
+<h4 align="center"> ✅ No inicio era para ser apenas uma calculadora ✅ </h4>
 <div align="center">
 <img src="https://user-images.githubusercontent.com/102932581/214587474-441297ce-459c-4410-aef8-f413add8a024.gif" />
 </div>
+<h4 align="center"> ✅ Depois com um novo visual e usando junja2 para templates dinâmicos e aproveitamento de código ✅ </h4>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/102932581/227298178-c72daa93-e64e-4736-86ed-ec038f18e6c5.gif" />
+</div>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/102932581/227375898-4133c98e-36dc-4cc5-9254-00773d4fe8f8.png" />
+</div>
+<h4 align="center"> ✅ Esse foi o ínico do Sistema Flask Completo (blueprints, POO, jinja2, etc) ✅ </h4>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/102932581/227304243-6e4bd416-de81-4c16-9419-f5440818c590.gif" />
+</div>
+<h4 align="center"> ✅ Aqui o projeto já faz Scraping e trás listas iterativas ✅ </h4>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/102932581/227373875-f5b3ca14-cd79-42a7-9e25-07ac06ae9477.gif" />
+</div>
+
+<h4 align="center"> ✅ Blueprint ✅ </h4>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/102932581/227376765-6a0efd01-b7cb-4fcb-98a0-b3a03673f18b.png" />
+</div>
+<h4 align="center"> ✅ Scraping totalmente POO em que você passa os elementos pelos métodos, sem precisar alterar todo código ✅ </h4>
+<h5 align="center"> Eu sei, podemos usar herança aqui. Mas vamos com calma, uma coisa de cada vez, né!? </h5>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/102932581/227376769-0506a1ff-8110-4406-a357-322904e8a87e.png" />
+</div>
+
 
 ## Links:
 
-**Calculadora com interface gráfica para o usuário:**
+**Acesse o deploy do projeto por esse link:**
 
-https://web-production-ed3b.up.railway.app/
+[Link do Projeto - V3.0.0](https://web-production-c42c.up.railway.app/login)
 
 ## Tecnologias Utilizadas:
 | <img src="https://user-images.githubusercontent.com/102932581/214597212-70086c3f-889e-44ba-bf62-806da9c86339.png" width=115><br><sub>Flask|  <img src="https://user-images.githubusercontent.com/102932581/214597761-9d28bf46-1658-414a-ae1d-559190d68040.png" width=115><br><sub>Render</sub>|  <img src="https://user-images.githubusercontent.com/102932581/177049046-6d72585c-c7f9-493f-82cd-3c85bf141a4f.png" width=115><br><sub>Visual Studio</sub>| <img src="https://user-images.githubusercontent.com/102932581/177049095-88a849aa-e9ee-4558-83f8-aaeeebb91cb2.png" width=115><br><sub>Git Bash</sub>|
@@ -37,3 +70,5 @@ https://hub.docker.com/r/mateusbrandeburski/calcu_pitagoras
 | [<img src="https://user-images.githubusercontent.com/102932581/177051558-31499416-a0cf-4495-8ab7-409dabca514f.jpg" width=115><br><br><sub>Mateus Brandeburski Ramos</sub>](https://github.com/mateusbrandeburski) |
 | :---: |
 
+
+  

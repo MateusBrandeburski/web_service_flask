@@ -17,10 +17,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <a href="/add">Adicionar itens</a>
-            </div>
-            <div class="col-xs-12">
+
                 <table class="table">
+
                     <thead>
                         <tr>
                             <th>Nome</th>
@@ -29,6 +28,7 @@
                             <th>Ações</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {% for e in endereco %}
                         <tr>
@@ -43,6 +43,11 @@
                         {% endfor %}
                     </tbody>
                 </table>
+
+                <div class="col-xs-12 text-center">
+                    <a type="submit" class="btn btn-secondary" href="/add">Adicionar Itens</a>
+                </div>
+
             </div>
         </div>
     </div>
