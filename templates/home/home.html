@@ -1,12 +1,56 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
     <main class="flex-shrink-0">
-      <div class="container">
+      <div class="container text-center">
         <h1 class="mt-5">Web Service</h1>
         <p class="lead">Este é um projeto que tem objetivo de mostrar conhecimentos back-end e fullstack. Por isso, o foco estão nas funcionalidades e no código por baixo da aplicação. Espero que tenha uma boa experiência >.<</p>
-        <!-- <p>Back to <a href="/docs/5.3/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p> -->
       </div>
     </main>
+    <!-- sobre o projeto -->
+    <div class="flex-shrink-0">
+      <div class="container text-center">
+        <h1 class="mt-5  text-primary">Sobre este serviço</h1>
+        <p class="lead">Foi usado <span class="badge bg-primary">Flask</span> para o back-end e <span class="badge bg-primary">Bootstrap</span> no front-end.</p>
+        <p> Na rota Web Scraping foi usado <span class="badge bg-primary">Beautifulsoup4</span> para minerar os dados e na rota <span class="badge bg-primary">SQLAchemy</span> foi usado ele mesmo como ORM. </p>
+      </div>
+    </div>
+    <!-- fim sobre o projeto -->
+<!-- cards -->   
+<div class="card-group">
 
+  <div class="card">
+    <img src="/static/image/Captura de tela de 2023-04-11 11-34-46.png" class="card-img-top" alt="blueprins e modularização">
+    <div class="card-body">
+      <h5 class="card-title">Modularização</h5>
+      <p class="card-text">Código todo modularizado, o que o torna escalável, expansível e fácil de entender. </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-body-secondary"><a target="_blank" class="link-offset-2 link-underline link-underline-opacity-100 gap-5" href="https://github.com/MateusBrandeburski/Sistema-Mateus">Acesse o repositório deste projeto aqui!</a></small>
+    </div>
+  </div>
 
+  <div class="card">
+    <img src="/static/image/22.png" class="card-img-top" alt="herença de html">
+    <div class="card-body">
+      <h5 class="card-title">Herença em HTML</h5>
+      <p class="card-text">Usando Jinja 2 é possível herdar partes de código HTML que se repete.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-body-secondary"><a  target="_blank" class="link-offset-2 link-underline link-underline-opacity-100 gap-5" href="https://github.com/MateusBrandeburski/Sistema-Mateus">Acesse o repositório deste projeto aqui!</a></small>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="/static/image/Captura de tela de 2023-04-11 11-55-44.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Todas as rotas são POO</h5>
+      <p class="card-text">Neste exemplo temos a rota do Web Scraping. Quando quisermos mudar em quais sites ele minera os dados, basta mudar os parâmetros, sem  necessidade de escrever todo Scraping novamente.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-body-secondary"><a target="_blank" class="link-offset-2 link-underline link-underline-opacity-100 gap-5" href="https://github.com/MateusBrandeburski/Sistema-Mateus">Acesse o repositório deste projeto aqui!</a></small>
+    </div>
+  </div>
+
+</div>
+<!-- fim cards -->
 {% endblock %}
