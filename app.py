@@ -6,6 +6,7 @@ from blueprints.web_scraping.web_scraping import web_scraping
 from blueprints.api.crud.crud import crud
 from blueprints.api.detran_df.consulta_veiculo import consulta_veiculo_df
 from blueprints.api.crud.database import db
+from blueprints.sobre_mim.sobre_mim import sobre
 import os
 
 # instancia do Flask
@@ -27,6 +28,7 @@ app.register_blueprint(calculadora)
 app.register_blueprint(web_scraping)
 app.register_blueprint(crud)
 app.register_blueprint(consulta_veiculo_df)
+app.register_blueprint(sobre)
 
 app = create_app()
 
