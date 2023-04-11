@@ -1,59 +1,96 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
-    <main class="flex-shrink-0">
-      <div class="container text-center">
-        <div class=" text-center border-bottom">
-          <h1 class="display-4 fw-bold">Web Service</h1>
-      </div>
-        <p class="lead">Este é um projeto que tem objetivo de mostrar conhecimentos back-end e fullstack. Por isso, o foco estão nas funcionalidades e no código por baixo da aplicação. Espero que tenha uma boa experiência >.<</p>
-      </div>
-    </main>
-    <!-- sobre o projeto -->
-    <div class="flex-shrink-0">
-      <div class=" text-center border-bottom">
-        <h1 class="display-6 fw-bold text-primary">Informações Técnicas</h1>
-      </div>
-        <p class="lead fs-6 text-center">Foi usado <span class="badge bg-primary">Flask</span> para o back-end e <span class="badge bg-primary">Bootstrap</span> no front-end.</p>
-        <p class="lead fs-6 text-center"> Na rota Web Scraping foi usado <span class="badge bg-primary">Beautifulsoup4</span> para minerar os dados e na rota <span class="badge bg-primary">SQLAchemy</span> foi usado ele mesmo como ORM. </p>
-      </div>
-    </div>
-    <!-- fim sobre o projeto -->
-<!-- cards -->   
-<div class="card-group">
 
-  <div class="card">
-    <img src="/static/image/Captura de tela de 2023-04-11 11-34-46.png" class="card-img-top" alt="blueprins e modularização">
-    <div class="card-body">
-      <h5 class="card-title">Modularização</h5>
-      <p class="card-text">Código todo modularizado, o que o torna escalável, expansível e fácil de entender. </p>
+ <!-- Carrocel -->
+<!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="card-footer">
-      <small class="text-body-secondary"><a target="_blank" class="link-offset-2 link-underline link-underline-opacity-100 gap-5" href="https://github.com/MateusBrandeburski/Sistema-Mateus">Acesse o repositório deste projeto aqui!</a></small>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
     </div>
-  </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+  <!-- fim carrocel -->
 
-  <div class="card">
-    <img src="/static/image/22.png" class="card-img-top" alt="herença de html">
-    <div class="card-body">
-      <h5 class="card-title">Herença em HTML</h5>
-      <p class="card-text">Usando Jinja 2 é possível herdar partes de código HTML que se repete.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-body-secondary"><a  target="_blank" class="link-offset-2 link-underline link-underline-opacity-100 gap-5" href="https://github.com/MateusBrandeburski/Sistema-Mateus">Acesse o repositório deste projeto aqui!</a></small>
-    </div>
-  </div>
+<!------------------------------------------------------->
 
-  <div class="card">
-    <img src="/static/image/Captura de tela de 2023-04-11 11-55-44.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Todas as rotas são POO</h5>
-      <p class="card-text">Neste exemplo temos a rota do Web Scraping. Quando quisermos mudar em quais sites ele minera os dados, basta mudar os parâmetros, sem  necessidade de escrever todo Scraping novamente.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-body-secondary"><a target="_blank" class="link-offset-2 link-underline link-underline-opacity-100 gap-5" href="https://github.com/MateusBrandeburski/Sistema-Mateus">Acesse o repositório deste projeto aqui!</a></small>
-    </div>
-  </div>
 
+<div class="container px-4">
+    <div class="row gx-5">
+        <div class="col text-center">
+            <h2>Mateus Brandeburski</h2>
+            <img src="/static/image/foto_curriculo.png" class="img-thumbnail" alt="foto currículo">
+        </div>
+        <div class="col p-5">
+            <h1>Desenvolvedor FullStack</h1>
+            <p>Contrate quem ama tecnologia e tem vontadade de fazer acontecer!</p>
+            <p>Com experiência em API's Rest tanto para receber dados, quanto para consumo de dados. arquitetura Assíncronas e Síncronas. Além de API's SOAP </p>
+            <p>Experiência em arquiterua de nuvem AWS e outras.</p>
+            <p>Experiência com Banco de Dados relacionas e NoSQL</p>
+        </div>
+    </div>
 </div>
-<!-- fim cards -->
+<hr class="featurette-divider">
+<div class="text-center border-bottom">
+  <h1 class="display-4 fw-bold">Projetos Desenvolvidos no Trabalho</h1>
+</div>
+<div class="container px-5 text-end">
+    <div class="row gx-5">
+        <div class="col p-4 text-start">
+            <h1>API's Assíncronas com FastAPI</h1>
+            <p>Aplicação capaz de processar uma lista json com mais de 1 milhão de linhas no banco de dados com uma única requisição</p>
+            <p>Com um Token JWT para autenticação, é possível saber quem foi que enviou os dados no banco de dados relacionas.</p>
+            <p>Acesso restrito para rotas com Token JWT de ADM e de não ADM.</p>
+        </div>
+        <div class="col p-5">
+            <img src="/static/image/fWMEIB5j_400x400.jpg" class="img-thumbnail" alt="...">
+        </div>
+    </div>
+</div>
+<hr class="featurette-divider">
+<div class="container px-4 p-5">
+    <div class="row gx-5">
+        <div class="col">
+            <img src="/static/image/Devops1.jpeg" class="img-thumbnail" alt="...">
+        </div>
+        <div class="col text-end">
+            <h1>DevOps</h1>
+            <p>Experiência com Docker para rodar diversas aplicações. Aplicações em nuvem AWS, Render, Reywail e outras plataformas.</p>
+            <p>Testes de integração continua, além de testes automatizados com Selenium. </p>
+            <p>O versionamento de todo código desenvolvido na Trovale tecnologia é feito por mim, e armazenado no GitHub.</p>
+        </div>
+    </div>
+</div>
+
+<!-- row-cols-lg-5 -->
 {% endblock %}
