@@ -3,76 +3,48 @@
 
 <!-- titulo -->
 <div class="titulo" style="max-width: 100%; height: auto;">  
-    <h1 class="text-center mx-auto p-4">Calculadoras</h1>
+    <h1 class="text-center mx-auto p-4 text-white">Calculadora de pitágoras</h1>
 </div>
 <!-- fim titulo -->
-    <!-- elemento que cria uma div entorno de todos os cards/forms -->
-    <div class="row row-cols-4 row-cols-md-4 g-4 justify-content-md-center">     
-        <!-- elemento pai de cada card individualmente -->
-       <div class="card border-primary mb-3 text-center m-4">
-        <div class="card-header">Regra de Três Simples</div>
+<!-- elemento que cria uma div entorno de todos os cards/forms -->
+<div class="row row-cols-4 row-cols-md-4 g-4 justify-content-md-center">     
+    <!-- elemento pai de cada card individualmente -->
+    <div class="card border-primary mb-3 text-center m-4">
+    <div class="card-header">Regra de Três Simples</div>
+    <div class="card-body text-center align-center">
+    <div class="container text-center align-center">
+    </div>
+    </div>
+    </div>
+    <!-- Segunda calculadora -->
+    <div class="card border-primary mb-3 text-center">
+        <div class="card-header">Calculadora de Pitágoras</div>
         <div class="card-body text-center align-center">
-              <div class="container text-center align-center">
-                <!-- inicio formulário 1 -->
-                 <form method='POST' action='/regra3'>
-                    <div class="row g-2 g-lg-3 text">
+                <div class="container text-center align-center">
+                <form method='POST' action='/pitagoras'>
+                    <div class="row g-5 g-lg-5">
                         <div class="col p-2">
-                            <input type='number' min="0" step='0.01' placeholder="A"  class='form-control form-control-sm text-center' id="A" name='A'>
+                            <input type='number' min="0" step='0.01' placeholder="CatetoA"  class='form-control form-control-sm text-center' id="cA" name='cA'>
                         </div>
                         <div class="col p-2">
-                            <label class="">=</label>
-                        </div>  
+                            <input type='number' min="0" step='0.01' placeholder="CatetoB" class='form-control form-control-sm text-center' id="zoposto" name='oposto'>
+                        </div>
+                    </div>   
+                    <div class="g-5 g-lg-6">
                         <div class="col p-2">
-                            <input type='number' min="0" step='0.01' placeholder="B" class='form-control form-control-sm text-center' id="B" name='B'>
+                            <input type='number' min="0" step='0.01' placeholder="Hipotenusa"  class='form-control form-control-sm text-center' id="hipotenusa" name='hipotenusa'>
                         </div>
-                    </div>          
-                    <div class="row g-2 g-lg-3">
-                        <div class="col p-2">
-                            <input type='number' min="0" step='0.01' placeholder="C"  class='form-control form-control-sm text-center' id="C" name='C'>
+                        <div class="col p-2">{{ resposta }} 
                         </div>
-                        <div class="col p-2">  
-                            <label class="">=</label>
-                        </div>
-                        <div class="col p-2">{{ resposta_regra3 }}
-                        </div>
+                    </div>
+                    <div class="mx-auto p-2">
+                        <button class="btn btn-primary" name="hipotenusa" value="submit_hipotenusa">Calcular</button>
                     </div> 
-                    <div class="mx-auto p-4">
-                        <button class="btn btn-primary" name="regra_3" value="submit_regra_3">Calcular</button>
-                    </div>  
-                    </form>
                 </div>
             </div>
+        </form>
         </div>
-        <!-- Segunda calculadora -->
-        <div class="card border-primary mb-3 text-center">
-            <div class="card-header">Calculadora de Pitágoras</div>
-            <div class="card-body text-center align-center">
-                  <div class="container text-center align-center">
-                    <form method='POST' action='/pitagoras'>
-                        <div class="row g-5 g-lg-5">
-                            <div class="col p-2">
-                                <input type='number' min="0" step='0.01' placeholder="CatetoA"  class='form-control form-control-sm text-center' id="cA" name='cA'>
-                            </div>
-                            <div class="col p-2">
-                                <input type='number' min="0" step='0.01' placeholder="CatetoB" class='form-control form-control-sm text-center' id="zoposto" name='oposto'>
-                            </div>
-                        </div>   
-                        <div class="g-5 g-lg-6">
-                            <div class="col p-2">
-                                <input type='number' min="0" step='0.01' placeholder="Hipotenusa"  class='form-control form-control-sm text-center' id="hipotenusa" name='hipotenusa'>
-                            </div>
-                            <div class="col p-2">{{ resposta }} 
-                            </div>
-                        </div>
-                        <div class="mx-auto p-2">
-                            <button class="btn btn-primary" name="hipotenusa" value="submit_hipotenusa">Calcular</button>
-                        </div> 
-                    </div>
-                </div>
-            </form>
-         </div>
-    </div>
-
+</div>
 <!-- inicio Mensagem de logado ou não logado -->
 {% with messages = get_flashed_messages() %}
     {% if messages %} 
@@ -85,17 +57,4 @@
         </ul>
     {% endif %}
 {% endwith %}
-<!-- fim Mensagem de logado ou não logado -->
-<!-- Janela de comentário -->
-<!-- <div class="card mb-3">
-    <img src="/static/image/opção-3.jpg" class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="/static" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-    </div>
-  </div>    -->
-
-<!-- fim janela comentário -->
 {% endblock %}
-

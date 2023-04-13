@@ -22,9 +22,9 @@ def minera_dados():
         """ bloco de scraping
         Aqui todos os elementos html são passados como parâmetro das suas respectivas funções. Na classe, passa-se apenas o link do scraping.
         """
-        scraping1 = WebScrapingBS4(link="https://revistagalileu.globo.com/")
-        noticias = scraping1.perga_texto(elementoFILHO='a', elementoPAI='div', tipoPAI='class', descricaoPAI='highlight__title theme-title-element')
-        links = scraping1.pega_url(elementoFILHO='a', elementoPAI='div', tipoPAI='class', descricaoPAI='highlight__title theme-title-element') 
+        scraping1 = WebScrapingBS4(link="https://revistagalileu.globo.com/ultimas-noticias/")
+        noticias = scraping1.perga_texto(elementoFILHO='a', elementoPAI='div', tipoPAI='class', descricaoPAI='feed-post-body')
+        links = scraping1.pega_url(elementoFILHO='a', elementoPAI='div', tipoPAI='class', descricaoPAI='feed-post-body') 
         itens_scraping1=zip(noticias, links)
 
         scraping2 = WebScrapingBS4(link='https://anmtv.com.br/')
