@@ -16,7 +16,7 @@ class Email():
         msg['Subject'] = 'Calculadora de Pitágoras'
         msg['From'] = EMAIL_ADDRESS
         msg['To'] = 'mateus.brandeburski92@gmail.com'
-        msg.set_content('Acabam de clicar em informações na calculadora de Pitágoras')
+        msg.set_content('Acabam de clicar no RPA')
 
 
         # envia o email
