@@ -19,7 +19,7 @@ def create_app():
     return app
 
 # secret_key é para o cookie do navegador
-app.secret_key = ['M4T3us']
+app.secret_key = ['M4T3usBrand']
 
 # instancias de todas as rotas blueprints
 app.register_blueprint(login)
