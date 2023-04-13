@@ -32,7 +32,7 @@ def minera_dados():
         links = scraping2.pega_url(elementoPAI='h3', tipoPAI='class', descricaoPAI='post__title typescale-2_5 line-limit-child line-limit-3', elementoFILHO='a') 
         itens_scraping2=zip(noticias, links)
         
-        Email(os.environ['EMAIL'], os.environ['SENHA']).envia_email()
+        # Email(os.environ['EMAIL'], os.environ['SENHA']).envia_email()
       
         return render_template('web_scraping/web_scraping.html',  itens_scraping1=itens_scraping1, itens_scraping2=itens_scraping2)   
     

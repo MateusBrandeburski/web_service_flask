@@ -1,16 +1,17 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
-    <main class="flex-shrink-0">
-      <div class="container">
-      <div class=" text-center border-bottom border-black">
-          <h1 class="display-4 fw-bold">Web Service</h1>
+
+      <div class="flex-shrink-0 text-start m-5">
+      <div class=" text-center">
+          <h1 class="display-4 fw-bold p-3"> Sobre este projeto: Web Service</h1>
       </div>
-        <p class="lead text-justify">Este é um projeto desenvolvido para mostar habiliades <strong>fullstack</strong> com ênfase no <strong>backend</strong>. Por exemplo, nas caluladoras, temos diversos desafios computacionas com tratamentos de erros ao calcular o Teorema de Pitágoras.</p>
-        <p class="lead text-justify">No <strong>Web Scraping</strong>, é um exemplo simples, mas pode ser expansível para minerar quaisquer dados na web, sem necessidade de escrever todo código novamente, pois existe uma classe para isso.</p>
-        <p class="lead text-justify"> Já no <strong>Crud</strong>, também é um exemplo de como persistir dados em um DB na nuvem e imprimi-los na mesma página HTML dinâmicamente e rapidamente.</p>
-        <p class="lead text-justify">Foi possível extrair essa velociade em um Web Service que está on-line em uma nuvem Free, que é limitada em velociade. Se fosse feito o deploy desta aplicação em um nuvem paga, seria ainda mais rápida.</p>
+        <p class="fs-5 p-3">Este é um projeto desenvolvido para <span style="background-color: 
+          #8597e4; background-size: 100px"> habiliades <strong class="fs-3">fullstack</strong> com ênfase no <strong class="fs-3">backend</strong>.</span> Por exemplo, nas caluladoras, temos diversos desafios computacionas com tratamentos de erros ao calcular o Teorema de Pitágoras.</p>
+        <p class="fs-5 p-3">No <strong style="background-color: #8597e4 ;">Web Scraping,</strong> é um exemplo simples, mas <strong style="background-color: #8597e4 ;">pode ser expansível para minerar quaisquer dados na web</strong>, sem necessidade de escrever todo código novamente, pois existe uma classe para isso.</p>
+        <p class="fs-5 p-3"> Já no <strong style="background-color: #8597e4 ;">Crud</strong>, também é um exemplo de como persistir dados em um <strong style="background-color: #8597e4 ;">DB na nuvem e imprimi-los na mesma página HTML dinâmicamente e rapidamente.</strong></p>
+        <p class="fs-5 p-3">Foi possível extrair essa velociade em um<strong style="background-color: hsl(0, 100%, 50%) ;"> Web Service que está on-line em uma nuvem Free,</strong> que é limitada em velociade. <strong style="background-color: #00fd00 ;">Se fosse feito o deploy desta aplicação em um nuvem paga, seria ainda mais rápida.</strong></p>
       </div>
-    </main>
+
 <!-- cards -->   
 <div class="card-group m-5">
   <div class="card">
@@ -23,7 +24,6 @@
       <small class="text-body-secondary"><a target="_blank" class="link-offset-2 link-underline link-underline-opacity-100 gap-5" href="https://github.com/MateusBrandeburski/Sistema-Mateus">Acesse o repositório deste projeto aqui!</a></small>
     </div>
   </div>
-
   <div class="card">
     <img src="/static/image/22.png" class="card-img-top" alt="herença de html">
     <div class="card-body">
@@ -34,7 +34,6 @@
       <small class="text-body-secondary"><a  target="_blank" class="link-offset-2 link-underline link-underline-opacity-100 gap-5" href="https://github.com/MateusBrandeburski/Sistema-Mateus">Acesse o repositório deste projeto aqui!</a></small>
     </div>
   </div>
-
   <div class="card">
     <img src="/static/image/Captura de tela de 2023-04-11 11-55-44.png" class="card-img-top" alt="...">
     <div class="card-body">
@@ -48,13 +47,16 @@
 </div>
 <!-- sobre o projeto -->
 <div class="flex-shrink-0 text-start m-5">
-  <div class="text-start border-bottom border-black">
+  <div class="text-start">
     <h1 class="display-6">Informações Técnicas:</h1>
   </div>
-    <p class="lead fs-6">Foi usado <strong>Flask</strong> para o back-end e <strong>BootStrap</strong> no front-end.</p>
-    <p class="lead fs-6"> Na rota Web Scraping foi usado <span class="badge bg-primary">Beautifulsoup4</span> para minerar os dados e na rota <span class="badge bg-primary">SQLAchemy</span> foi usado ele mesmo como ORM. </p>
+    <tr>
+      <th>Foi usado <strong>Flask</strong> para o back-end e <strong>BootStrap</strong> no front-end.</th>
+      <th>Na rota Web Scraping foi usado <span class="badge bg-primary">Beautifulsoup4</span> para minerar os dados e na rota <span class="badge bg-primary">SQLAchemy</span> foi usado ele mesmo como ORM.</th>
+    </tr>
 </div>
-</div>
+    <!-- <p class="lead fs-6">Foi usado <strong>Flask</strong> para o back-end e <strong>BootStrap</strong> no front-end.</p>
+    <p class="lead fs-6"> Na rota Web Scraping foi usado <span class="badge bg-primary">Beautifulsoup4</span> para minerar os dados e na rota <span class="badge bg-primary">SQLAchemy</span> foi usado ele mesmo como ORM. </p> -->
 <!-- fim sobre o projeto -->
 <!-- fim cards -->
 {% endblock %}
