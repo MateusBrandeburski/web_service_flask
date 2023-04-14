@@ -36,7 +36,7 @@ class TeoremaDePitagoras():
         Se a hipotenusa tiver o mesmo valor de um cateto, isso siguinifica que ele não é um triângulo retângulo. Logo, o cálculo é impossível e não se aplica. Porque o resultado será sempre 0 (zero)
         """   
         if cateto_final == 0.0:
-            return "Cálculo Impossível. Resultado 0.0"
+            return "Cálculo Impossível. Lembre-se que a hipotenusa é o maior lado."
         else:
             return f"Cateto = {round(cateto_final, 2)}"
       
