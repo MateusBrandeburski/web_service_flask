@@ -39,17 +39,3 @@ class WebScrapingBS4:
             
         return links
     
-
-
-# scraping1 = WebScrapingBS4(link="https://www.techtudo.com.br/ultimas/")
-# noticias = scraping1.perga_texto(elementoFILHO='a', elementoPAI='div', tipoPAI='class', descricaoPAI='feed-post-body-title gui-color-primary gui-color-hover')
-# links = scraping1.pega_url(elementoFILHO='a', elementoPAI='div', tipoPAI='class', descricaoPAI='highlight__title theme-title-element') 
-
-
-# scraping1 = WebScrapingBS4(link="https://revistagalileu.globo.com/ultimas-noticias/")
-# noticias = scraping1.perga_texto(elementoFILHO='a', elementoPAI='div', tipoPAI='class', descricaoPAI='feed-post-body')
-# links = scraping1.pega_url(elementoFILHO='a', elementoPAI='div', tipoPAI='class', descricaoPAI='feed-post-body') 
-
-
-# print(noticias)
-# print(links)
