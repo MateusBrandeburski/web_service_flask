@@ -1,16 +1,11 @@
 
-// programa para aparecer as informações da div ao clicar no link //
-var btn = document.querySelector('#show-or-hide');
-var container = document.querySelector('.explicacao');
-
-btn.addEventListener('click', function() {
-
-    if(container.style.display === 'block') {
-        container.style.display = 'none';   
-
-    } else {
-        container.style.display = 'block';
-    }
-
-});
-
+function closeNav() {
+    document.querySelector('.navbar-collapse').classList.remove('show');
+  }
+  
+$(document).ready(function(){
+    $('[data-bs-toggle="tooltip"]').tooltip();  // ativa o tooltip
+    $(".abre-sidebar").hover(function(){     // exibe a sidebar quando passar o mouse sobre o elemento que contém a classe "abre-sidebar"
+      $("#exampleModal").modal("show");
+    });
+  });

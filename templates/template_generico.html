@@ -16,28 +16,53 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="/static/js/modal.js"></script>
   <style>
     .list-group-item:hover{
       background-color: rgb(59, 57, 57, 0.164)!important;
-
-    }   
+    }  
+    .sidebar {
+      display: none; /* oculta a barra lateral por padrão */
+    }
+    
+    /* estilo do footer */
+    #myFooter {
+      background-color: #333;
+      color: #fff;
+      height: 100px;
+      padding: 20px;
+      position: relative;
+    }
+    
+    /* estilo da barra lateral */
+    #myFooter:hover .sidebar {
+      display: block; /* mostra a barra lateral quando o mouse passa por cima do footer */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+    } 
 </style>
 </head>
 <body style="background-color: #4e4665">
-  <nav class="navbar navbar-light bg-light shadow">
+<!-- navbar -->
+<nav class="navbar navbar-light bg-light shadow backdrop close-nav">
     <div class="container-fluid">
-      <h1 class="display-4 fw-bold navbar-brand md-1 h1 fs-2">Web Service Hub ©</h1>
-      <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <h1 class="display-4 fw-bold navbar-brand md-1 h1 fs-2 abre-sidebar">Web Service Hub ©</h1>
+      <button class="navbar-toggler abre-sidebar"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-toggle="tooltip" title="Menu">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>   
 </nav>
+<!-- fim navbar -->
+
+<!-- sidebar -->
 <div class="modal fade" style="width: 300px;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content" style="width: 300px;">
       <div class="modal-header">
         <h5 class="modal-title fs-5" id="exampleModalLabel">MENU</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
       </div>
       <div class="modal-body">
         <ul class="list-group list-group-flush">
@@ -62,7 +87,7 @@
     </div>
   </div>
 </div>
-<!-- fim da barra da nevegação -->
+<!-- fim sidebar -->
     
         {% block conteudo %} 
         {% endblock %}
@@ -83,5 +108,6 @@
     <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
   </ul>
 </footer>
+<!-- fim footer -->
 </body>
 </html>
