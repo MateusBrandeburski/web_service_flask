@@ -1,30 +1,29 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
 
-<h1 style="text-align: center;">Exemplo de Persistência de dados no DB</h1>
-
-<form action="/add" method="POST">
-
-<div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">Nome Completo</span>
-    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="nome" name="nome">
+<h1 class="text-white p-5" style="text-align: center;">Adicione seus dados no Data Base</h1>
+<div class="container px-2">
+  <div class="row gx-1 align-items-center justify-content-center">
+    <div class="col-md-5">
+      <form action="/add" method="POST">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nome Completo</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="nome" name="nome">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Email</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email" name="email">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Cidade
+            </span>
+            <input type="text" class="form-control" placeholder="" aria-label="Server" id="cidade" name="cidade">
+          </div>
+          <div class="col-xs-12 text-center">
+            <button type="submit" class="btn btn-secondary">Enviar</button>
+          </div>
+      </form>
+    </div>
   </div>
-  
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon2">Email</span>
-    <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email" name="email">
-  </div>
-  
-  
-  <div class="input-group mb-3">
-    <span class="input-group-text">Cidade
-    </span>
-    <input type="text" class="form-control" placeholder="" aria-label="Server" id="cidade" name="cidade">
-  </div>
-
-  <div class="col-xs-12 text-center">
-    <button type="submit" class="btn btn-secondary">Enviar</button>
 </div>
-
-</form>
 {% endblock %}

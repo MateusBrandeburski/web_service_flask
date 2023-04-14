@@ -2,31 +2,33 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
 
-<h1 style="text-align: center;">Editar {{ endereco.nome }}</h1>
-<form action="/edit/{{ endereco.id }}" method="POST">
+<h1 class="text-white p-5" style="text-align: center;">Editar dados de <strong> {{ endereco.nome }}.</strong></h1>
 
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Nome Completo</span>
-        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="nome" name="nome" value="{{ endereco.nome }}">
+<div class="container px-2">
+    <div class="row gx-1 align-items-center justify-content-center">
+      <div class="col-md-5">
+            <form action="/edit/{{ endereco.id }}" method="POST">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Nome Completo</span>
+                    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="nome" name="nome" value="{{ endereco.nome }}">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2">Email</span>
+                    <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email" name="email" value="{{ endereco.email }}">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Cidade
+                    </span>
+                    <input type="text" class="form-control" placeholder="" aria-label="Server" id="cidade" name="cidade" value="{{ endereco.cidade }}">
+                </div>
+                <div class="text-center">
+                    <div class="col-xs-12">
+                        <button type="submit"  class="btn btn-secondary">Editar</button>
+                    </div>
+                </div>
+            </form>
+      </div>
     </div>
-      
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon2">Email</span>
-        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email" name="email" value="{{ endereco.email }}">
-    </div>
-      
-      
-    <div class="input-group mb-3">
-        <span class="input-group-text">Cidade
-        </span>
-        <input type="text" class="form-control" placeholder="" aria-label="Server" id="cidade" name="cidade" value="{{ endereco.cidade }}">
-    </div>
-    
-    <div class="text-center">
-        <div class="col-xs-12">
-            <button type="submit"  class="btn btn-secondary">Editar</button>
-        </div>
-    </div>
-    
-</form>
+</div>
+
 {% endblock %}
