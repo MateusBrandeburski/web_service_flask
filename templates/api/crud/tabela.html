@@ -34,7 +34,13 @@
                             <td>{{e.cidade}}</td>
                             <td>
                                 <a href="/edit/{{e.id}}">Editar</a>
-                                <a href="/delete/{{e.id}}">Excluir</a>
+
+                                {% if is_admin %}
+                                    <a href="/delete/{{e.id}}">Excluir</a>
+                                {% else %}
+                                    <a data-toggle="modal" href="#myModal">Excluir</a>
+                                {% endif %}
+
                             </td>
                         </tr>
                         {% endfor %}
@@ -44,8 +50,31 @@
                 <div class="col-xs-12 text-center">
                     <a type="submit" class="btn btn-secondary" href="/add">Adicionar Itens</a>
                 </div>
-
             </div>
         </div>
     </div>
+
+<!-- Janela modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">AVISO</h4>
+        </div>
+        <div class="modal-body text-danger">
+          Somente uma conta ADMIN pode excluir dados no Data Base.
+        </div>
+        <div class="modal-body">
+            <p class="text-primary">Login: MateusFullStack | Senha: Fu11D3v3l0p3r</p> 
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- fim Janela Modal -->
+
 {% endblock %}

@@ -38,7 +38,10 @@
             <form method="POST" action="/autenticar">
                 <p class="text-white"><label>Usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
                 <p class="text-white"><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
-                <p class="text-white"><button class="btn btn-primary" type="submit">Entrar</button></p>
+                <div class="d-flex justify-content-between">
+                  <p class="text-white"><button class="btn btn-primary" type="submit">Entrar</button></p>
+                  <p class="text-white btn btn-primary disabled"><a class="text-white" style="text-decoration: none;" href="{{url_for('cadastro.register')}}">Cadastro</a></p>
+                </div>
             </form>
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
@@ -49,7 +52,7 @@
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>Para entrar no sitema, você precisa logar.</strong> Comece utilizando como usuário: MateusTI | Senha: developer
+                      <strong>Para entrar no sitema, você precisa logar.</strong> Comece utilizando como usuário: MateusTI | Senha: D3v3l0p3r
                     </div>
                   </div>
                 </div>
@@ -57,4 +60,5 @@
           </div>
         </div>
     </div>
-</body
+  </body>
+</html>
