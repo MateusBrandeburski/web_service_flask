@@ -11,6 +11,7 @@ def register():
     
     return render_template ('login/cadastro.html')
 
+
 @cadastro.route('/processa-cadastro', methods=['GET' ,'POST'])
 def processa_cadastro():
 

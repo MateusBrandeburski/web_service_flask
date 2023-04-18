@@ -4,7 +4,7 @@ import os
 
 class Email():  
     
-    def envia_email(email_cadastrado):
+    def envia_email(email_cadastrado, mensagem='Sua conta no Web Service Hub © foi criada com sucesso!'):
         # configurar email, senha
         EMAIL_ADDRESS = os.environ['EMAIL']
         EMAIL_PASSWORD = os.environ['SENHA']
@@ -13,7 +13,7 @@ class Email():
         msg['Subject'] = 'Web Service Hub ©'
         msg['From'] = EMAIL_ADDRESS
         msg['To'] = 'mateus.brandeburski92@gmail.com', email_cadastrado
-        msg.set_content('Sua conta no Web Service Hub foi criada com sucesso!')
+        msg.set_content(mensagem)
 
 
         # envia o email
