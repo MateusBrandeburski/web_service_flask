@@ -1,9 +1,6 @@
-
 {% extends 'template_generico.html' %}
 {% block conteudo %}
-
 <h1 class="text-white p-5" style="text-align: center;">Editar dados de <strong class="text-danger"> {{ endereco.nome }}</strong></h1>
-
 <div class="container px-2">
     <div class="row gx-1 align-items-center justify-content-center">
       <div class="col-md-5">
@@ -13,7 +10,7 @@
                     <ul id="messages" class="list-unstyled">
                     {% for message in messages %}
                         {% if message %}
-                          <li class="alert alert-danger">{{ message }}</li>
+                          <li class="alert alert-danger"><p>{{ message }}</p><strong class="text-primary">Login: MateusFullStack | Senha: Fu11D3v3l0p3r</strong></li>
                         {% endif %}
                     {% endfor %}
                     </ul>

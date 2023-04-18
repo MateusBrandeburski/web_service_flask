@@ -1,19 +1,19 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
 <div class="text-center text-white p-4">
-    <h1 class="display-4 fw-bold">SQLAlquemy</h1>
+    <h1 class="display-4 fw-bold mt-4">Integração com Banco de Dados</h1>
 </div>
-<div class="container my-5">
+<div class="container">
     <div class="bg-white p-5 rounded">
       <div class="py-5 mx-auto">
         <h1 class="display-5 fw-normal text-center"></h1>
         <p class="fs-2">Os dados dessa página estão sendo armazenados em um Data Base Postgres. 
         <p>Uma das vantagens do SQlAlchemy, além de persistir dados SQL escritos em python, é que ele se conecta a qualquer Date Base SQL (Oracle, Azure e outros) por uma string de conexão. Extremamente simples e escalável.</p>
-        <p>Além disso, este é apenas um exemplo simples do que pode se tornar um sitesma inteiro, externo ou interno de um empresa.</p>
+        <p>Além disso, este é apenas um exemplo do que pode se tornar um sitesma inteiro, externo ou interno de um empresa. <strong class="text-primary"> Experimente usar Editar/Excluir</strong></p>
         </div>
     </div>
   </div>
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-xs-12">
                 <table class="table table-striped table-responsive table-bordered border-black" style="background-color: rgb(255, 255, 255);">
@@ -52,7 +52,6 @@
             </div>
         </div>
     </div>
-
 <!-- Janela modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -61,7 +60,7 @@
           <h4 class="modal-title" id="myModalLabel">AVISO</h4>
         </div>
         <div class="modal-body text-danger">
-          Somente uma conta ADMIN pode excluir ou adicionar dados no Data Base.
+          Somente uma conta ADMIN pode excluir dados no Data Base.
         </div>
         <div class="modal-body">
             <p class="text-primary">Login: MateusFullStack | Senha: Fu11D3v3l0p3r</p>      

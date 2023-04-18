@@ -62,4 +62,3 @@ def delete(id):
     
     else:
         return redirect(url_for('crud.index'))
-

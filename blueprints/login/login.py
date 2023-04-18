@@ -1,9 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, session, flash, url_for
 from classes.database.database import Usuarios
 
-
 login = Blueprint('login', __name__, template_folder='templates')
-
 
 # Renderiza
 @login.route('/', methods=['GET'])
@@ -31,10 +29,9 @@ def autenticar():
     flash('Username ou password inválidos')
     return redirect(url_for('login.index'))
    
-   
+  
 @login.route('/logout')
 def logout():
     session['usuario_logado'] = None
     flash('Logout efetuado com sucesso')
     return redirect(url_for('login.index'))
-    
