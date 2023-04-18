@@ -15,12 +15,13 @@ def index():
         return render_template('api/crud/tabela.html', endereco=endereco)
      
 
+# rota POST/adicionar
 @crud.route('/add', methods=['GET','POST'])
 def add():   
     
     if request.method == 'POST':
         endereco = Endereco(request.form['nome'], request.form['email'], request.form['cidade'])
-        print(endereco)
+
         db.session.add(endereco) #salva no DB
         db.session.commit()
         

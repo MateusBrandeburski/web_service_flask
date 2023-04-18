@@ -1,22 +1,19 @@
 import smtplib
 from email.message import EmailMessage
+import os
 
-class Email():
+class Email():  
     
-    def __init__(self, EMAIL_ADDRESS, EMAIL_PASSWORD):
-        self.__EMAIL_ADDRESS = EMAIL_ADDRESS
-        self.__EMAIL_PASSWORD = EMAIL_PASSWORD
-    
-    def envia_email(self):
+    def envia_email(email_cadastrado):
         # configurar email, senha
-        EMAIL_ADDRESS = self.__EMAIL_ADDRESS
-        EMAIL_PASSWORD = self.__EMAIL_PASSWORD
+        EMAIL_ADDRESS = os.environ['EMAIL']
+        EMAIL_PASSWORD = os.environ['SENHA']
 
         msg = EmailMessage()
-        msg['Subject'] = 'Calculadora de Pitágoras'
+        msg['Subject'] = 'Web Service Hub ©'
         msg['From'] = EMAIL_ADDRESS
-        msg['To'] = 'mateus.brandeburski92@gmail.com'
-        msg.set_content('Acabam de clicar no RPA')
+        msg['To'] = 'mateus.brandeburski92@gmail.com', email_cadastrado
+        msg.set_content('Sua conta no Web Service Hub foi criada com sucesso!')
 
 
         # envia o email

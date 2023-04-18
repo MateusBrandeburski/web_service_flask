@@ -20,8 +20,10 @@ class Usuarios(db.Model):
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
     nickname = db.Column(db.String(150), nullable=False)
     senha = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String, nullable=False)
     eh_admin = db.Column(db.Boolean, default=False)
     
-    def __init__(self, nickname, senha):
+    def __init__(self, nickname, senha, email):
         self.nickname = nickname
         self.senha = senha
+        self.email = email
