@@ -2,11 +2,24 @@
 {% extends 'template_generico.html' %}
 {% block conteudo %}
 
-<h1 class="text-white p-5" style="text-align: center;">Editar dados de <strong> {{ endereco.nome }}.</strong></h1>
+<h1 class="text-white p-5" style="text-align: center;">Editar dados de <strong class="text-danger"> {{ endereco.nome }}</strong></h1>
 
 <div class="container px-2">
     <div class="row gx-1 align-items-center justify-content-center">
       <div class="col-md-5">
+            <!-- Mensagem Flash -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %} 
+                    <ul id="messages" class="list-unstyled">
+                    {% for message in messages %}
+                        {% if message %}
+                          <li class="alert alert-danger">{{ message }}</li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <!-- fim Mensagem Flash -->
             <form action="/edit/{{ endereco.id }}" method="POST">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Nome Completo</span>
@@ -23,12 +36,35 @@
                 </div>
                 <div class="text-center">
                     <div class="col-xs-12">
-                        <button type="submit"  class="btn btn-secondary">Editar</button>
+                      {% if session.get('usuario_logado') and session.get('eh_admin') %}
+                        <button type="submit" class="btn btn-secondary">Editar</button>
+                      {% else %}
+                      <button type="button" class="btn btn-secondary disabled">Editar</button>
+                      {% endif %}
                     </div>
                 </div>
             </form>
       </div>
     </div>
 </div>
-
+<!-- Janela modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">AVISO</h4>
+        </div>
+        <div class="modal-body text-danger">
+          Somente uma conta ADMIN pode excluir ou adicionar dados no Data Base.
+        </div>
+        <div class="modal-body">
+            <p class="text-primary">Login: MateusFullStack | Senha: Fu11D3v3l0p3r</p>      
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- fim Janela Modal -->
 {% endblock %}

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session
+from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from classes.database.database import db, Endereco, Usuarios
 
 
@@ -29,18 +29,27 @@ def add():
     return render_template('api/crud/add.html')
 
 
+# rota PUT/atualizar
 @crud.route('/edit/<int:id>', methods=['GET','POST'])
 def edit(id):
     
+    
     endereco = Endereco.query.get(id)
-    if request.method == 'POST':
-        endereco.nome = request.form['nome']
-        endereco.email = request.form['email']
-        endereco.cidade = request.form['cidade']
-        db.session.commit()
-        return redirect(url_for('crud.index'))
-    return render_template('api/crud/edit.html', endereco=endereco) 
+    if session.get('usuario_logado') and session.get('eh_admin'):
+     
+        if request.method == 'POST':
+            endereco.nome = request.form['nome']
+            endereco.email = request.form['email']
+            endereco.cidade = request.form['cidade']
+            db.session.commit()
+            
+            return redirect(url_for('crud.index'))
         
+    else:
+        flash('Somente um usuário ADMIN pode atualizar dados no Data Base.')  
+    
+    return render_template('api/crud/edit.html', endereco=endereco) 
+    
 
 @crud.route('/delete/<int:id>')
 def delete(id):
