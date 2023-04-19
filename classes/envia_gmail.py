@@ -1,6 +1,7 @@
-import smtplib
+from validate_email import validate_email
 from email.message import EmailMessage
 import os
+import smtplib
 
 class Email():  
     
@@ -8,6 +9,7 @@ class Email():
         # configurar email, senha
         EMAIL_ADDRESS = os.environ['EMAIL']
         EMAIL_PASSWORD = os.environ['SENHA']
+        
 
         msg = EmailMessage()
         msg['Subject'] = 'Web Service Hub ©'
@@ -20,7 +22,10 @@ class Email():
         with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
             smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
             smtp.send_message(msg)
-
+            
+    def valida_email(email_cadastro):
+        is_valid = validate_email(email_cadastro)
+        
 
 
 

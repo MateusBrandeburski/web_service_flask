@@ -10,3 +10,4 @@ requests==2.25.1
 Flask-SQLAlchemy==3.0.3
 SQLAlchemy==1.4.45
 psycopg2-binary==2.9.5
+validate_email==1.3
