@@ -36,14 +36,20 @@
       <h1 class="text-white mt-5">Cadastro</h1>
       <form action="/processa-cadastro" method="POST">
           <p class="text-white"><label>Usuário</label>
-          <input type="text" class="form-control" pattern="[a-zA-Z0-9]+" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="nickname" name="nickname" title="Não é permitido o uso de espaço neste campo."></p>
+          <input type="text" class="form-control" pattern="[a-zA-Z0-9]+" minlength="5" maxlength="10" aria-label="Username" aria-describedby="basic-addon1" id="nickname" name="nickname" title="O usuário deve conter entre 5 a 10 caracteres e não pode haver espaço"></p>
           <p class="text-white"><label>Senha</label>
-          <input type="password" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" id="senha" name="senha"></p>
+          
+          <input type="password" class="form-control" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+-=]).{8,}$" aria-describedby="basic-addon2" id="senha" name="senha" title="8 caracteres, contendo pelo menos um dígito, uma letra minúscula, uma letra maiúscula e um caractere especial"></span>
+          </p>
+
           <p class="text-white"><label>Email</label>
           <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" id="email" name="email"></p>
+
+
           <div class="col-xs-12 mt-2 text-end">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
           </div>
+
       </form>
       <div class="accordion mt-4" id="accordionExample">
         <div class="accordion-item">
