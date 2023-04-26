@@ -1,13 +1,13 @@
 from flask import Flask
-from blueprints.login.login import login
 from blueprints.home.home import home
 from blueprints.calculadoras.calculadora import calculadora
 from blueprints.web_scraping.web_scraping import web_scraping
 from blueprints.api.crud.crud import crud
-from blueprints.login.cadastro import cadastro
-from blueprints.login.recuperar_senha import recupera
 from blueprints.api.detran_df.consulta_veiculo import consulta_veiculo_df
 from blueprints.sobre_mim.sobre_mim import sobre
+from blueprints.telas_login.cadastro.cadastro import cadastro
+from blueprints.telas_login.login.login import login
+from blueprints.telas_login.recuperar_senha.recuperar_senha import recupera
 
 from classes.database.database import db
 import os
