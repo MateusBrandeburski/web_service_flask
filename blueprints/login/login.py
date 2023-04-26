@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, session, flash, url_for
 from classes.database.database import Usuarios
+from flask_bcrypt import Bcrypt
 
+bcrypt = Bcrypt()
 login = Blueprint('login', __name__, template_folder='templates')
 
 # Renderiza
@@ -19,9 +21,9 @@ def autenticar():
     nickname = request.form['usuario']
     senha = request.form['senha']
 
-    usuario = Usuarios.query.filter_by(nickname=nickname, senha=senha).first()
+    usuario = Usuarios.query.filter_by(nickname=nickname).first()
 
-    if usuario is not None:
+    if usuario is not None and bcrypt.check_password_hash(usuario.senha, senha):
         session['usuario_logado'] = usuario.nickname
         session['eh_admin'] = usuario.eh_admin # adiciona se o usuário é adm ou não na sessão 
         return redirect(url_for('web_scraping.index'))
