@@ -2,8 +2,9 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from classes.database.database import Usuarios, db
 from classes.envia_gmail import Email
 from validate_email import validate_email
+from flask_bcrypt import Bcrypt
 
-
+bcrypt = Bcrypt()
 cadastro = Blueprint('cadastro', __name__, template_folder='template')
 
 
@@ -20,11 +21,17 @@ def processa_cadastro():
         # Verifica se todos os campus foram preenchidos
         try:
             # captura os dados do input
-            usuario = Usuarios(request.form['nickname'], request.form['senha'], request.form['email'])
-            # verifica se o email é válido para criar conta
-            is_valid = validate_email(request.form['email'])
+            nome = request.form['nickname']
+            senha = request.form['senha']
+            email = request.form['email']
+            
+            # verifica se o email é valido, se for, ele faz o trampo todo.
+            is_valid = validate_email(email)
             if is_valid:
-                db.session.add(usuario)
+                hashed_password = bcrypt.generate_password_hash(senha).decode('utf-8')
+                novo_usuario = Usuarios(nickname=nome, senha=hashed_password, email=email)
+          
+                db.session.add(novo_usuario)
                 db.session.commit()
                 
             else:
@@ -45,4 +52,3 @@ def processa_cadastro():
         except:
             return redirect(url_for('login.index')) 
         
-    return render_template ('login/cadastro.html')

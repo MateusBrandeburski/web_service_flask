@@ -15,7 +15,7 @@ import os
 # instancia do Flask
 app = Flask(__name__)
 
-# conexão com DB por meio do SQLALchemy
+# conexão com DB por meio do SQLALchemy, coloquei aqui porque eu preciso passar o 'app' como parâmetro e não posso gerar 'cirule_import'.
 def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DB_TESTES_MATEUS']
     db.init_app(app)

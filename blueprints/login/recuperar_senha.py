@@ -19,9 +19,8 @@ def get_email():
     email = request.form['email']
     user = db.session.query(Usuarios).filter_by(email=email).first()
     if user:
-        Email.envia_email(request.form['email'], mensagem=('Seu usuário é: {}.\nSua senha é: {}'.format(user.nickname, user.senha)))
+        Email.envia_email(request.form['email'], senha=user.senha)
         return render_template('login/recuperar_senha.html', recuperar_senha=True)
         
     else:
         return render_template('login/recuperar_senha.html', recuperar_senha=False)
-    
