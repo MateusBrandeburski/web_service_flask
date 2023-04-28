@@ -17,6 +17,8 @@ def register():
 @cadastro.route('/processa-cadastro', methods=['POST'])
 def processa_cadastro():
     
+    bcrypt = Bcrypt()
+    
     if request.method == 'POST':     
         
         # Verifica se todos os campus foram preenchidos
@@ -25,24 +27,32 @@ def processa_cadastro():
             # captura os dados do input
             nome = request.form['nickname']
             senha = request.form['senha']
+            confirma_senha = request.form['confirma_senha']
             email = request.form['email']
             
-            # transforma a senha em hash
-            bcrypt = Bcrypt()
-            hashed_password = bcrypt.generate_password_hash(senha).decode('utf-8')
+            # verifica a confirmção de senha
+            if confirma_senha == senha:
             
-            # verifica se o email é valido. É uma verificação superficial (verifica se tem @ no email)
-            is_valid = validate_email(email)
-            if is_valid:
+                # transforma a senha em hash
+                hashed_password = bcrypt.generate_password_hash(senha).decode('utf-8')
                 
-                # cria a query e commita no DB
-                novo_usuario = Usuarios(nickname=nome, senha=hashed_password, email=email)  
-                db.session.add(novo_usuario)
-                db.session.commit()   
-                return redirect(url_for('login.index'))
+                # verifica se o email é valido. É uma verificação superficial (verifica se tem @ no email)
+                is_valid = validate_email(email)
+                if is_valid:
+                    
+                    # cria a query e commita no DB
+                    novo_usuario = Usuarios(nickname=nome, senha=hashed_password, email=email)  
+                    db.session.add(novo_usuario)
+                    db.session.commit() 
+                    
+                    return redirect(url_for('login.index'))
+                
+                else:
+                    flash('Email inválido.')
+                    return redirect(url_for('cadastro.register'))
             
             else:
-                flash('Email inválido.')
+                flash('As senhas precisam ser idênticas.')
                 return redirect(url_for('cadastro.register'))
 
         # esse erro acontece quando já existem um usuário o email cadastrado no DB
@@ -54,4 +64,3 @@ def processa_cadastro():
         except ValueError:
             flash('Todos os campos precissam ser preenchidos.')
             return redirect(url_for('cadastro.register'))
-        
