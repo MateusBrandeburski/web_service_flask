@@ -8,9 +8,11 @@ calculadora = Blueprint('calculadora', __name__, template_folder='templates')
 # index
 @calculadora.route('/calculadoras', methods=['GET'])
 def index():
+    
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('login.index'))
+    
     return render_template('calculadoras/calculadoras.html')
-
-
 
 # Regra de Três
 @calculadora.route('/regra3', methods=['GET','POST'])
@@ -31,6 +33,10 @@ def processa_regra_3():
 # Teorema de Pitágras        
 @calculadora.route('/pitagoras', methods=['GET','POST'])   
 def pitagoras():
+    
+        
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect(url_for('login.index'))
           
     if 'hipotenusa' in request.form:     
 

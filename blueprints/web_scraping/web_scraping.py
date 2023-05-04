@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, session, flash, url_for, Flask
 from classes.web_scraping import WebScrapingBS4
-from classes.envia_gmail import Email
+from classes.email.envia_gmail import Email
 import os
 
 web_scraping = Blueprint('web_scraping', __name__, template_folder='templates')

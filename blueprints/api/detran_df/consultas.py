@@ -19,6 +19,7 @@ import requests
 
 
 url = 'https://api.infosimples.com/api/v2/consultas/detran/df/veiculo/mobile'
+
 args = {
 "placa": "JGU8I79", 
 "renavam": "00893956139", 

@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from classes.database.database import Usuarios, db
-from classes.envia_gmail import Email
+from classes.email.envia_gmail import Email
 from validate_email import validate_email
 from flask_bcrypt import Bcrypt
 from sqlalchemy.exc import IntegrityError
@@ -18,12 +18,9 @@ def register():
 def processa_cadastro():
     
     bcrypt = Bcrypt()
-    
-    if request.method == 'POST':     
-        
+    if request.method == 'POST':        
         # Verifica se todos os campus foram preenchidos
         try:
-   
             # captura os dados do input
             nome = request.form['nickname']
             senha = request.form['senha']
@@ -32,14 +29,12 @@ def processa_cadastro():
             
             # verifica a confirmção de senha
             if confirma_senha == senha:
-            
                 # transforma a senha em hash
                 hashed_password = bcrypt.generate_password_hash(senha).decode('utf-8')
                 
                 # verifica se o email é valido. É uma verificação superficial (verifica se tem @ no email)
                 is_valid = validate_email(email)
-                if is_valid:
-                    
+                if is_valid:        
                     # cria a query e commita no DB
                     novo_usuario = Usuarios(nickname=nome, senha=hashed_password, email=email)  
                     db.session.add(novo_usuario)

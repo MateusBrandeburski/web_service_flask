@@ -5,8 +5,6 @@ import requests
 
 consulta_veiculo_df = Blueprint('consulta_veiculo_df', __name__, template_folder='template')
 
-
-
 @consulta_veiculo_df.route('/consulta-veiculo-df') # type: ignore
 def index():
   

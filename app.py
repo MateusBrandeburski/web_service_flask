@@ -8,6 +8,8 @@ from blueprints.sobre_mim.sobre_mim import sobre
 from blueprints.telas_login.cadastro.cadastro import cadastro
 from blueprints.telas_login.login.login import login
 from blueprints.telas_login.recuperar_senha.recuperar_senha import recupera
+from blueprints.telas_login.cadastro.redefinir_senha.redefinir_senha import redefinir
+
 
 from classes.database.database import db
 import os
@@ -34,9 +36,10 @@ app.register_blueprint(web_scraping)
 app.register_blueprint(crud)
 app.register_blueprint(consulta_veiculo_df)
 app.register_blueprint(sobre)
+app.register_blueprint(redefinir)
+
 
 app = create_app()
-
 if __name__ == '__main__':
     app.run( host='0.0.0.0', port=8000, debug=True)
     RuntimeError

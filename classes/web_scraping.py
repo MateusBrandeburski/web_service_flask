@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 
 
-
 class WebScrapingBS4:
     
     """ Função contrutora. Ela pega e armazena os dados que são passados por aqui."""

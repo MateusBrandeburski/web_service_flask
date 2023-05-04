@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web service</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
-  </head>
-  <body class="bd-masthead mb-3" style="background-image: url(/static/image/gradiente_image.jpg); background-size: cover; background-repeat: repeat-y;">
-<!-- Header -->
-    <header class="">
-        <div class="p-1 text-center bg-white shadow">
-          <h1 class="mb-1 text-black">Web Service Hub ©</h1>
-        </div>
-      </header>
-<!-- fim Header -->
+{% extends 'login/generica_login.html' %}
+{% block conteudo %}
     <div class="container px-5 p-5">
         <div class="row gx-5 align-items-center justify-content-center">
           <div class="col-md-5">
-
             <!-- inicio Mensagem de logado ou não logado -->
             {% with messages = get_flashed_messages() %}
                 {% if messages %} 
@@ -59,9 +43,8 @@
                   </div>
                 </div>
               </div>
-              <a class="text-white btn btn-primary mt-3" href="{{url_for('recupera.index')}}" >Recuperar Senha</a>
+              <a class="text-white btn btn-primary mt-3" href="{{url_for('recupera.index')}}">Não lembro minha senha</a>
           </div>
         </div>
     </div>
-  </body>
-</html>
+{% endblock %}
