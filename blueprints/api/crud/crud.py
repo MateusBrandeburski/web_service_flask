@@ -33,7 +33,7 @@ def add_itens():
 
     
 # rota POST/adicionar
-@crud.route('/add', methods=['POST'])
+@crud.route('/add', methods=['GET','POST'])
 def add():   
     
     if request.method == 'POST':
@@ -44,7 +44,8 @@ def add():
         
         return redirect(url_for('crud.index'))
     
-    return redirect(url_for('crud.add_itens'))
+    return render_template('api/crud/add.html')
+
 
 
 # rota PUT/atualizar
