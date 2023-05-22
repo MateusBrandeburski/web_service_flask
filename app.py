@@ -10,19 +10,11 @@ from blueprints.telas_login.login.login import login
 from blueprints.telas_login.recuperar_senha.recuperar_senha import recupera
 from blueprints.telas_login.cadastro.redefinir_senha.redefinir_senha import redefinir
 
-
 from classes.database.database import db
 import os
 
 # instancia do Flask
 app = Flask(__name__)
-
-# conexão com DB por meio do SQLALchemy, coloquei aqui porque eu preciso passar o 'app' como parâmetro e não posso gerar 'cirule_import'.
-def create_app():
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DB_TESTES_MATEUS']
-    db.init_app(app)
-    return app
-
 # secret_key é para o cookie do navegador
 app.secret_key = ['M4T3usBrand']
 
@@ -38,10 +30,12 @@ app.register_blueprint(consulta_veiculo_df)
 app.register_blueprint(sobre)
 app.register_blueprint(redefinir)
 
+# conexão com DB por meio do SQLALchemy, coloquei aqui porque eu preciso passar o 'app' como parâmetro e não posso gerar 'cirule_import'.
+def create_app():
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DB_TESTES_MATEUS']
+    db.init_app(app)
+    return app
 
 app = create_app()
 if __name__ == '__main__':
     app.run( host='0.0.0.0', port=8000, debug=True)
-
-
-

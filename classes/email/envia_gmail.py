@@ -67,7 +67,7 @@ css_personalizado = """
 # Configurar email, senha
 class Email:
 
-    def envia_email(email_cadastrado, nome_usuario, token, css_personalizado=css_personalizado):
+    def envia_email(email_cadastrado, nome_usuario, css_personalizado=css_personalizado):
         
         EMAIL_ADDRESS = os.environ['EMAIL']
         EMAIL_PASSWORD = os.environ['SENHA']
@@ -108,10 +108,7 @@ class Email:
                     <p>Recebemos uma solicitação para redefinir a senha da sua conta.</p>
                     <p>Para redefinir sua senha, clique no link abaixo:</p>
                     
-                    <div class="text-center">
-                        <a href="http://localhost:8000/nova-senha/{token}" >Redefinir Senha</a>
-                    </div>
-                    
+
                     <p>Se você não solicitou a redefinição da senha, não é necessário realizar nenhuma ação.</p>
                     <p>Caso tenha alguma dúvida ou necessite de ajuda, entre em contato com nossa equipe de suporte.</p>
                     <p>Obrigado, <br>Equipe de Suporte</p>

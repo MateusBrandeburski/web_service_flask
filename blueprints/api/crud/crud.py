@@ -47,7 +47,6 @@ def add():
     return render_template('api/crud/add.html')
 
 
-
 # rota PUT/atualizar
 @crud.route('/edit/<int:id>', methods=['GET','POST'])
 def edit(id):

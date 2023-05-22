@@ -11,7 +11,7 @@ class WebScrapingBS4:
      
     def perga_texto(self, elementoPAI, elementoFILHO, tipoPAI='', descricaoPAI='',tipoFILHO='', descricaoFILHO=''):
         #response
-        response = requests.get(f'{self.link}') # Space Today
+        response = requests.get(f'{self.link}') 
         content = response.content
         site = BeautifulSoup(content, 'html.parser')
         

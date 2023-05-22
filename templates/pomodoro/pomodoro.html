@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer Pomodoro</title>
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+</head>
+<body>
+    <h1>Timer Pomodoro</h1>
+    <h2 id="timer">25:00</h2>
+    <button id="startButton">Iniciar</button>
+    <button id="pauseButton">Pausar</button>
+    <script>
+        var startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', startTimer);
+        
+        var pauseButton = document.getElementById('pauseButton');
+        pauseButton.addEventListener('click', pauseTimer);
+    </script>
+</body>
+</html>

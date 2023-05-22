@@ -11,3 +11,4 @@ def index():
      else:
         return render_template('home/home.html')
 
+
